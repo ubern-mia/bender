@@ -8,6 +8,8 @@ See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing 
 
 ## Episode 2: “Medical image computing is not the same as computing on medical images” 
 
+See [glossary](/episode02/glossar.md) for a glossary of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo.
+
 ## Episode 3: “Modeling”
 
 ## Episode 4: “Evaluating your model: we are out of the sandbox”
