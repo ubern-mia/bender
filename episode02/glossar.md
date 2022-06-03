@@ -6,6 +6,10 @@ Deep Learning and especially as applied to Medical Imaging seems to have several
 
 ### Exogenous and Endogenous contrast
 
+### hyper-intense, hypo-intense
+
+### Lesions versus tumor versus target volume
+
 ### Anterior and Posterior, Dorsal and Ventral, Sagittal, Coronal and Axial, Radial and Lateral, ...
 
 ### MRI sequences:
@@ -18,13 +22,19 @@ The C here stands for Contrast Enhancement. It appears that liquids and other fe
 
 ### Image properties related:
 
+#### Saliency map
+
+#### Regularization
+
+#### Optimizer (ADAM, Gradient Descent family of, ...)
+
 #### Image Super-resolution:
 Reconstructing a higher-resolution image or image sequence from the observed low-resolution image.
 
 #### Data Augmentation:
 Augmenting the training data set can be done by applying various transformations that preserves the labels, as in rotations, scalings and intensity shifts of images, or more advanced data augmentation techniques like anatomically sound deformations (for medical image analysis), or other data set specific operations.
 
-### Deep Learning model related:
+### Deep Learning model training related:
 
 #### Model warmup and validation patience
 
