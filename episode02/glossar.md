@@ -2,6 +2,8 @@
 
 Deep Learning and especially as applied to Medical Imaging seems to have several terms that are thrown around - which are difficult to really track and remember at all times. This page is meant to include a single line (or only slightly longer) description of some of these commonly used terms, so that reading papers and talking to peers is easier than otherwise.
 
+See https://youtu.be/Gbnep6RJinQ?t=1626 for a discussion around this very topic at Stanford AIMI.
+
 ## Clinical terms that could confuse an engineer/technical person
 
 ### Exogenous and Endogenous contrast
