@@ -1,5 +1,7 @@
 # References for model and data organization
 
+https://karpathy.github.io/2019/04/25/recipe/ includes some great general recipes for model training (general because it isn't Medical Imaging in particular): we'd like to do a specialization of this, assuming readers are already aware of these fundamental rules. 
+
 https://docs.nvidia.com/clara/clara-train-sdk/pt/mmar.html - specifically for medical AI models. 
 
 https://bids.neuroimaging.io - Brain Imaging Data structure - for organizing multiple subject files for neuroimaging.
