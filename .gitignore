@@ -1,3 +1,7 @@
+# Output from training runs
+*tfevents*
+*.pt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
