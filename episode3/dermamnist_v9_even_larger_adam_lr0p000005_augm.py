@@ -235,17 +235,42 @@ def main(
             # Log the training loss once every 50 iterations
             if (it % 50) == 0:
                 # Log the loss to tensorboard (using summary.add_scalar)
-                summary.add_scalar("loss", loss, it)
+                summary.add_scalar("loss/train", loss, it)
 
             # Run validation, update patience, and save the model once every epoch.
             # You could put this code outside the inner training loop, but
             # doing it here allows you to run validation more than once per epoch.
             if (it % epoch_length) == 0:
+
+                batch = next(iter(loader_val))
+
+                inputs = batch[0]
+                labels = batch[1]
+                labels = labels.squeeze().long()
+
+                # Zero your gradients for every batch!
+                optimizer.zero_grad()
+
+                # Make predictions for this batch
+                outputs = model(inputs)
+
+                # Compute the loss and its gradients
+                loss = loss_function(outputs, labels)
+                summary.add_scalar("loss/val", loss, it)
+
+                # Loop over the metrics for training, loss and accuracy.
+                metrics = evaluate_model(model, loader_train)
+
+                # Loop over the metrics and log them to tensorboard
+                for key in metrics.keys():
+                    summary.add_scalar(key + "/train", metrics[key], it)
+
+                # Loop over the metrics for validation, loss and accuracy.
                 metrics = evaluate_model(model, loader_val)
 
                 # Loop over the metrics and log them to tensorboard
                 for key in metrics.keys():
-                    summary.add_scalar(key, metrics[key], it)
+                    summary.add_scalar(key + "/val", metrics[key], it)
 
                 accuracy = metrics["accuracy"]
                 if accuracy > best_accuracy:
@@ -270,7 +295,7 @@ def main(
 
 
 if __name__ == "__main__":
-    train = False
+    train = True
 
     if train:
         main()
