@@ -1,13 +1,11 @@
 from typing import Any
 import os
-import time
 
 from tqdm import tqdm
 
 import torch as th
 from torch import nn
-from torch.utils.data import Dataset, DataLoader
-import torch.utils.data as data
+from torch.utils.data import DataLoader
 
 import matplotlib.pyplot as plt
 
@@ -18,7 +16,7 @@ from torchvision import transforms
 from sklearn.metrics import classification_report
 
 # Define the torch.device you will use: use the cuda default.
-device: th.device("cuda")
+device = th.device("cuda" if th.cuda.is_available() else "cpu")
 
 
 def _get_output_path() -> str:
@@ -143,12 +141,13 @@ def evaluate_model(model: nn.Module, loader: DataLoader):
     return metrics
 
 
-def main(
+def train(
     output_path: str = None, batch_size: int = 8, num_epochs: int = 100, max_patience=30
 ):
 
     if output_path is None:
         output_path = _get_output_path()
+        os.makedirs(output_path, exist_ok=True)
 
     data_train, data_val = load_datasets("train")
     # Define the PyTorch data loaders for the training and test datasets.
@@ -263,37 +262,48 @@ def main(
                     return
 
     plt.figure()
-    plt.plot([it for loss, it in train_loss], [loss for loss, it in train_loss])
-    plt.savefig("train_loss.png")
+    plt.plot(
+        [it for loss, it in train_loss],
+        [loss.detach().item() for loss, it in train_loss],
+    )
+    plt.xlabel("Iterations")
+    plt.ylabel("Training loss")
+    plt.savefig(os.path.join(output_path, "train_loss.png"))
 
     plt.figure()
-    plt.plot([it for loss, it in val_acc], [acc for acc, it in val_acc])
-    plt.savefig("val_acc.png")
+    plt.plot([it for acc, it in val_acc], [acc for acc, it in val_acc])
+    plt.xlabel("Iterations")
+    plt.ylabel("Validation accuracy")
+    plt.savefig(os.path.join(output_path, "val_acc.png"))
+
+
+def test():
+    # Test model loading after training.
+
+    model = CNN()
+    model_path = (
+        _get_output_path().split("_")[0] + "_" + _get_output_path().split("_")[1]
+    )
+    model.load_state_dict(th.load(model_path + "/best_model.pt"))
+
+    # Print model's state_dict
+    print("Model's state_dict:")
+    for param_tensor in model.state_dict():
+        print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+
+    num_params = sum(p.numel() for p in model.parameters())
+    print(f"Number of parameters: {num_params}")
+
+    data_train, data_test = load_datasets("test")
+    loader_test = DataLoader(data_test, batch_size=8, shuffle=False)
+
+    metrics = evaluate_model(model, loader_test)
+    print(f"Best accuracy is: ", metrics["accuracy"])
 
 
 if __name__ == "__main__":
-    train = True
-
-    if train:
-        main()
+    training = True
+    if training:
+        train(num_epochs=5)
     else:
-        # Test model loading after training.
-        model = CNN()
-        model_path = (
-            _get_output_path().split("_")[0] + "_" + _get_output_path().split("_")[1]
-        )
-        model.load_state_dict(th.load(model_path + "/best_model.pt"))
-
-        # Print model's state_dict
-        print("Model's state_dict:")
-        for param_tensor in model.state_dict():
-            print(param_tensor, "\t", model.state_dict()[param_tensor].size())
-
-        num_params = sum(p.numel() for p in model.parameters())
-        print(f"Number of parameters: {num_params}")
-
-        data_train, data_test = load_datasets("test")
-        loader_test = DataLoader(data_test, batch_size=8, shuffle=False)
-
-        metrics = evaluate_model(model, loader_test)
-        print(f"Best accuracy is: ", metrics["accuracy"])
+        test()
