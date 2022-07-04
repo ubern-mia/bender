@@ -6,8 +6,7 @@ from tqdm import tqdm
 import torch as th
 from torch import nn
 from torch.utils.data import DataLoader
-
-import matplotlib.pyplot as plt
+from torch.utils.tensorboard import SummaryWriter
 
 import medmnist
 from medmnist import INFO
@@ -15,7 +14,7 @@ from torchvision import transforms
 
 from sklearn.metrics import classification_report
 
-# Define the torch.device you will use: use the cuda default.
+# Define the torch.device you will use.
 device = th.device("cuda" if th.cuda.is_available() else "cpu")
 
 
@@ -29,30 +28,14 @@ def load_datasets(flag):
 
     data_flag = "dermamnist"
     download = True
-
     info = INFO[data_flag]
-    task = info["task"]
-    n_channels = info["n_channels"]
-    n_classes = len(info["label"])
 
     DataClass = getattr(medmnist, info["python_class"])
 
     transform_medmnist = transforms.Compose([transforms.ToTensor(), transforms.Pad(2)])
 
-    training_transform_medmnist = transforms.Compose(
-        [
-            transforms.ToTensor(),
-            transforms.Pad(2),
-            transforms.RandomCrop(
-                size=(32, 32), padding=(0, 0, 5, 5), padding_mode="reflect"
-            ),
-            transforms.RandomHorizontalFlip(p=0.5),
-        ]
-    )
-
-    # load the data
     data_train = DataClass(
-        split="train", transform=training_transform_medmnist, download=download
+        split="train", transform=transform_medmnist, download=download
     )
     if flag == "train":
         data_next = DataClass(
@@ -82,20 +65,36 @@ class CNN(nn.Module):
             nn.BatchNorm2d(64),
             nn.ReLU(),
             # (32, 32, 32)
-            nn.Conv2d(64, 64, (3, 3), padding=1, stride=2, bias=False),
-            nn.BatchNorm2d(64),
+            nn.Conv2d(64, 128, (3, 3), padding=1, stride=2, bias=False),
+            nn.BatchNorm2d(128),
             nn.ReLU(),
             # (64, 16, 16)
+            nn.Conv2d(128, 128, (3, 3), padding=1, bias=False),
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+            # (64, 16, 16)
+            nn.Conv2d(128, 128, (3, 3), padding=1, bias=False),
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+            # (64, 16, 16)
+            nn.Conv2d(128, 256, (3, 3), padding=1, stride=2, bias=False),
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
+            # (128, 8, 8)
+            nn.Conv2d(256, 256, (3, 3), padding=1, bias=False),
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
+            # (128, 8, 8)
         )
 
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
 
-        self.classifier = nn.Sequential(nn.Linear(64, 7))
+        self.classifier = nn.Sequential(nn.Linear(256, 7))
 
     def forward(self, x):
         x = self.features(x)
         x = self.avgpool(x)
-        x = th.reshape(x, (-1, 64))
+        x = th.reshape(x, (-1, 256))
         return self.classifier(x)
 
 
@@ -132,11 +131,10 @@ def evaluate_model(model: nn.Module, loader: DataLoader):
 
     print(
         classification_report(
-            label_list, pred_list, target_names=info["label"], digits=4
+            label_list, pred_list, target_names=list(info["label"].values()), digits=4
         )
     )
 
-    # Return a dictionary of metrics. You should compute, at least, the accuracy.
     metrics["accuracy"] = correct / total
     return metrics
 
@@ -159,18 +157,21 @@ def train(
     # Define the model and move it to the device. Define the optimizer for
     # the parameters of the model.
     model = CNN()
-    optimizer = th.optim.SGD(model.parameters(), lr=0.000005, momentum=0.5)
+    optimizer = th.optim.Adam(model.parameters(), lr=0.005)
     loss_function = th.nn.CrossEntropyLoss()
 
     # Compute the number of parameters of the model
     num_params = sum(p.numel() for p in model.parameters())
     print(f"Number of parameters: {num_params}")
 
+    # Create the tensorboard summary writer.
+    summary = SummaryWriter(output_path, purge_step=0)
+
+    # Log the number of parameters to tensorboard
+    summary.add_scalar("num_params", num_params)
+
     # Iteration counter
     it = 0
-
-    train_loss = []
-    val_acc = []
 
     # Patience starts with the given maximum patience. Patience should decrease
     # every time the model is evaluated and the performance did not improve.
@@ -214,12 +215,19 @@ def train(
 
             # Log the training loss once every 50 iterations
             if (it % 50) == 0:
-                train_loss.append([loss, it])
+                # Log the loss to tensorboard (using summary.add_scalar)
+                summary.add_scalar("loss/train", loss, it)
 
             # Run validation, update patience, and save the model once every epoch.
             # You could put this code outside the inner training loop, but
             # doing it here allows you to run validation more than once per epoch.
             if (it % epoch_length) == 0:
+
+                metrics = evaluate_model(model, loader_train)
+
+                # Loop over the training metrics and log them to tensorboard
+                for key in metrics.keys():
+                    summary.add_scalar(key + "/train", metrics[key], it)
 
                 batch = next(iter(loader_val))
 
@@ -233,17 +241,23 @@ def train(
                 # Make predictions for this batch
                 outputs = model(inputs)
 
-                # Loop over the metrics for validation, loss and accuracy.
+                # Compute the loss and its gradients
+                loss = loss_function(outputs, labels)
+
+                # Log the loss to tensorboard (using summary.add_scalar)
+                summary.add_scalar("loss/val", loss, it)
+
                 metrics = evaluate_model(model, loader_val)
 
-                # Loop over the metrics and log them to tensorboard
+                # Loop over the validation metrics and log them to tensorboard
                 for key in metrics.keys():
-                    val_acc.append([metrics[key], it])
+                    summary.add_scalar(key + "/val", metrics[key], it)
 
                 accuracy = metrics["accuracy"]
                 if accuracy > best_accuracy:
                     # Update patience and best_accuracy
                     patience = max_patience
+
                     best_accuracy = accuracy
                     model_file = os.path.join(output_path, "best_model.pt")
                     # Save the model to the given `model_file`.
@@ -258,32 +272,15 @@ def train(
                 print(f"Current accuracy is {accuracy}, and best is: {best_accuracy}.")
 
                 if patience == 0:
-                    print("My patience ran out.")
+                    print("My validation patience ran out.")
                     return
-
-    plt.figure()
-    plt.plot(
-        [it for loss, it in train_loss],
-        [loss.detach().item() for loss, it in train_loss],
-    )
-    plt.xlabel("Iterations")
-    plt.ylabel("Training loss")
-    plt.savefig(os.path.join(output_path, "train_loss.png"))
-
-    plt.figure()
-    plt.plot([it for acc, it in val_acc], [acc for acc, it in val_acc])
-    plt.xlabel("Iterations")
-    plt.ylabel("Validation accuracy")
-    plt.savefig(os.path.join(output_path, "val_acc.png"))
 
 
 def test():
     # Test model loading after training.
 
     model = CNN()
-    model_path = (
-        _get_output_path().split("_")[0] + "_" + _get_output_path().split("_")[1]
-    )
+    model_path = _get_output_path()
     model.load_state_dict(th.load(model_path + "/best_model.pt"))
 
     # Print model's state_dict
@@ -298,12 +295,12 @@ def test():
     loader_test = DataLoader(data_test, batch_size=8, shuffle=False)
 
     metrics = evaluate_model(model, loader_test)
-    print(f"Best accuracy is: ", metrics["accuracy"])
+    print(f"Test accuracy is: ", metrics["accuracy"])
 
 
 if __name__ == "__main__":
-    training = True
+    training = False
     if training:
-        train(num_epochs=5)
+        train()
     else:
         test()
