@@ -6,13 +6,21 @@ See https://youtu.be/Gbnep6RJinQ?t=1626 for a discussion around this very topic 
 
 ## Clinical terms that could confuse an engineer/technical person
 
+See [Radiopaedia](https://radiopaedia.org/search) for a comprehensive list of clinical terms. [Radiology specific terms](https://radiopaedia.org/articles/terms-used-in-radiology) could be specifically more useful.
+
+Other great glossaries to look at: 
+
+* [Harvard Health](https://www.health.harvard.edu/a-through-c)
+* [CDC's glossary of Radiation](https://emergency.cdc.gov/radiation/pdf/glossary.pdf)
+* [Radacademy's glossary](https://www.asrt.org/radcademy/glossary) and [set of videos](https://www.asrt.org/radcademy/videos)
+
 ### Exogenous and Endogenous contrast
 
 ### hyper-intense, hypo-intense
 
 ### Lesions versus tumor versus target volume
 
-### Anterior and Posterior, Dorsal and Ventral, Sagittal, Coronal and Axial, Radial and Lateral, ...
+### Anterior and Posterior, Dorsal and Ventral, Sagittal, Coronal and Axial, Radial and Lateral, Caudal/Cranial ...
 
 ### MRI sequences:
 This indicates the various modalities - T1, T1c, T2, FLAIR and so on. There could be one or more that are used for segmentation.
