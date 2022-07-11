@@ -12,7 +12,11 @@ We would invite you to watch along the following four episodes that track the li
 " target="_blank"><img src="http://img.youtube.com/vi/NtszpkE0gc4/0.jpg" 
 alt="BENDER episode 01" width="640" height="480" border="10" /></a>
 
-See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid surprises later on, in your project. 
+See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid 💣 surprises later on.
+
+[Exploring the Dermamnist data set](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dermamnist.ipynb) is a notebook that uses data from  [MedMNIST](https://medmnist.com/) to demonstrate examples of the kinds of details you should look for, while analyzing your clinical data.
+
+If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM tags](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dicom.ipynb) is a notebook to demonstrate how to go about looking at the non-image metadata as well! 
 
 --------------------
 
