@@ -2,7 +2,9 @@
 
 Are you a new(ish) Graduate or a super-enthusiastic Undergraduate student working with Medical Image data, and pondering over how to get that Deep Learning model to train with it? If so, this repository is for you: it supports the [BENDER (BEst practices in medical imagiNg DEep leaRning) series of videos](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp), which is submitted to [the MICCAI Education Challenge, 2022](https://miccai-sb.github.io/challenge.html).
 
-We would invite you to watch along the following four episodes that track the life and times of a new student who has just started working with this kind of data: through the ups and downs of his journey to build a State-of-The-Art model. We hope through the experience of this student, you learn not to make the same mistakes, and get a head-start in your own exploration.  
+We invite you to watch along the following four episodes that track the life and times of a new student who has just started working with this kind of data: through the ups and downs of his journey to build a State-of-The-Art model. 
+
+We hope through the experience of this student, you learn not to make the same mistakes, and get a head-start in your own exploration.  
 
 --------------------
 
