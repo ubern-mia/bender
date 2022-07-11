@@ -1,6 +1,10 @@
 # The 🤖 BENDER series:
 
-This repository supports the [BENDER (BEst practices in medical imagiNg DEep leaRning) series of videos](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp) for the MICCAI Education Challenge, 2022.
+Are you a new(ish) Graduate or a super-enthusiastic Undergraduate student working with Medical Image data, and pondering over how to get that Deep Learning model to train with it? If so, this repository is for you: it supports the [BENDER (BEst practices in medical imagiNg DEep leaRning) series of videos](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp), which is submitted to [the MICCAI Education Challenge, 2022](https://miccai-sb.github.io/challenge.html).
+
+We would invite you to watch along the following four episodes that track the life and times of a new student who has just started working with this kind of data: through the ups and downs of his journey to build a State-of-The-Art model. We hope through the experience of this student, you learn not to make the same mistakes, and get a head-start in your own exploration.  
+
+--------------------
 
 ## Episode 1: “The data pile” 
 
@@ -10,6 +14,8 @@ alt="BENDER episode 01" width="640" height="480" border="10" /></a>
 
 See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid surprises later on, in your project. 
 
+--------------------
+
 ## Episode 2: “Medical image computing is not the same as computing on medical images” 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=jGLBcMyiehg
@@ -18,6 +24,8 @@ alt="BENDER episode 02" width="640" height="480" border="10" /></a>
 
 See [glossary](/episode02/glossar.md) for a glossary of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo.
 
+--------------------
+
 ## Episode 3: “Modeling”
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=f0wd8EvRiH0
@@ -25,6 +33,8 @@ See [glossary](/episode02/glossar.md) for a glossary of common terms used in the
 alt="BENDER episode 03" width="640" height="480" border="10" /></a>
 
 This episode focuses on the next step of actually building a model: starting from a naive implementation, walking through the process of improving it iteratively to get to a better state, while also understanding how to evaluate if it is indeed getting better!
+
+--------------------
 
 ## Episode 4: “Evaluating your model: we are out of the sandbox”
 
