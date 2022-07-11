@@ -18,6 +18,8 @@ See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing 
 
 If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM tags](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dicom.ipynb) is a notebook to demonstrate how to go about looking at the non-image metadata as well! 
 
+[Here](http://www.r2d3.us/) is a wonderful (non-medical-imaging) example of how simply "looking" at the data prior to modeling helps make sense of the landscape, and is a step that one must not neglect while starting off!
+
 --------------------
 
 ## Episode 2: “Medical image computing is not the same as computing on medical images” 
