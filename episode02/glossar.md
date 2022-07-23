@@ -71,64 +71,66 @@ TODO
 
 ## Technical terms that could confuse a clinician
 
-### AI versus Machine Learning (from [here](https://www.nibib.nih.gov/science-education/glossary))
+Here are some references for a more exhaustive list of terms, some of which we have reproduced here:
+
+* [tasq.ai's Glossary of AI terminology](https://www.tasq.ai/glossary/)
+* [NIBIB's glossary of Medical Imaging](https://www.nibib.nih.gov/science-education/glossary)
+* [AI: a glossary of terms for AI in Medical Imaging](https://link.springer.com/content/pdf/bbm%3A978-3-319-94878-2%2F1.pdf)
+
+### AI (from [here](https://www.tasq.ai/glossary/artificial-intelligence/))
+The objective of AI is to make computers/computer programs clever enough to mimic the behavior of our brains. This is intentionally a broad term, and Machine Learning, Deep Learning are merely subsets (specific instances of a type of AI) which have recently shown tremendous success, so much so, that Machine Learning is almost synomymous to AI. 
+
+### Machine Learning (from [here](https://www.nibib.nih.gov/science-education/glossary))
 Machine Learning is a subset/type of AI, where a computer algorithm (a set of rules and procedures) is developed to analyze and make predictions from data that is fed into the system. Machine learning-based technologies are routinely used every day, such as personalized news feeds and traffic prediction maps.
+
+### Deep Learning (from [here](https://www.nibib.nih.gov/science-education/glossary))
+A form of machine learning that uses many layers of computation to form what is described as a deep neural network, capable of learning from large amounts of complex, unstructured data. Deep neural networks are responsible for voice-controlled virtual assistants as well as self-driving vehicles, which learn to recognize traffic signs.
 
 ### (Artificial) Neural Networks (from [here](https://www.nibib.nih.gov/science-education/glossary))
 A machine learning approach modeled after the brain in which algorithms process signals via interconnected nodes called artificial neurons. Mimicking biological nervous systems, artificial neural networks have been used successfully to recognize and predict patterns of neural signals involved in brain function.
 
-### Image properties related:
+### Convolutional Neural Networks (from [here](https://www.tasq.ai/glossary/convolutional-neural-network-cnn/))
+A Convolutional Neural Network (CNN) is a Deep Learning system that can take an input picture, give relevance (learnable weights and biases) to various aspects/objects in the image, and distinguish between them. When compared to other classification algorithms, the amount of pre-processing required by a CNN is significantly less. While filters are hand-engineered in basic approaches, CNN can learn these filters/characteristics with adequate training.
 
-#### Saliency map
+### Image Classification (from [here](https://www.tasq.ai/glossary/classification/))
+Classification is described as the operation of identifying, interpreting, and organizing objects into specified groups. A great example of classification is to categorize emails as “spam” or “non-spam,” as employed by today’s leading email service providers. For medical images, this could mean marking the entire image as "healthy" or "cancerous" - without any more details about what makes it cancerous or not. 
 
-#### Regularization
+### Image Segmentation
+Segmentation (more specifically, semantic or pixel-wise segmentation) is the operation of classifying each pixel/component of an image into categories. For example, what part of a pathology slide is part of a cell? What are the boundaries of the brain in a MR image? Specialized AI models/systems exist to automatically estimate these boundaries with fairly high accuracies compared to humans, at a fraction of the time/cost. 
 
-#### Optimizer (ADAM, Gradient Descent family of, ...)
+### U-Net (from [here](https://www.tasq.ai/glossary/u-net/))
+U-net was created for neural network image segmentation and was the first to use it. Its design is roughly divided into two parts: an encoder network and a decoder network. Unlike classification, where the U-net network’s final output is the only thing that matters, semantic segmentation necessitates not just pixel-level discrimination but also a technique to construct the discriminative features learned at various stages of the encoder onto the image pixels.
 
-#### Image Super-resolution:
-Reconstructing a higher-resolution image or image sequence from the observed low-resolution image.
-
-#### Data Augmentation:
-Augmenting the training data set can be done by applying various transformations that preserves the labels, as in rotations, scalings and intensity shifts of images, or more advanced data augmentation techniques like anatomically sound deformations (for medical image analysis), or other data set specific operations.
-
-### Deep Learning model training related:
-
-#### Model warmup and validation patience
-
-#### Batch Normalization Layer:
-These layers are typically placed after activation layers, producing normalized activation maps by subtracting the mean and dividing by the standard deviation for each training batch. Including batch normalization layers forces the network to periodically change its activations to zero mean and unit standard deviation as the training batch hits these layers, which works as a regularizer for the network, speeds up training, and makes it less dependent on careful parameter initialization. 
-
-#### Dropout Layer:
-By averaging several models in an ensemble one tend to get better performance than when using single models. Dropout is an averaging technique based on stochastic sampling of neural networks. By randomly removing neurons during training one ends up using slightly different networks for each batch of training data, and the weights of the trained network are tuned based on optimization of multiple variations of the network.
-
-#### Skip connections:
-These make it possible to train much deeper networks. A 152 layer deep ResNet won the 2015 ILSVRC competition, and the authors also successfully trained a version with 1001 layers. Having skip connections in addition to the standard pathway gives the network the option to simply copy the activations from layer to layer (more precisely, from ResNet block to ResNet block), preserving information as data goes through the layers.
-
-#### Dense Nets:
+### Dense Net:
 These build on the ideas of ResNet, but instead of adding the activations produced by one layer to later layers, they are simply concatenated together. The original inputs in addition to the activations from previous layers are therefore kept at each layer (again, more precisely, between blocks of layers), preserving some kind of global state. This encourages feature reuse and lowers the number of parameters for a given depth. DenseNets are therefore particularly well-suited for smaller data sets (outperforming others on e.g. Cifar-10 and Cifar-100)
 
-#### Generative Adversarial Networks:
+### Generative Adversarial Networks:
 A generative adversarial network consists of two neural networks pitted against each other. The generative network G is tasked with creating samples that the discriminative network D is supposed to classify as coming from the generative network or the training data. The networks are trained simultaneously, where G aims to maximize the probability that D makes a mistake while D aims for high classification accuracy.
 
-#### Siamese Networks:
+### Siamese Networks:
 A Siamese network consists of two identical neural networks, both the architecture and the weights, attached at the end. They are trained together to differentiate pairs of inputs. Once trained, the features of the networks can be used to perform one-shot learning without retraining
 
-### Types of learning:
+### Transfer Learning or fine-tuning
+Also called fine-tuning or pre-training: first you train a network to perform a task where there is an abundance of data, and then you copy weights from this network to a network designed for the task at hand. An interesting example is to do interorgan transfer learning in 3D, an idea we have used for kidney segmentation, where pre-training a network to do brain segmentation decreased the number of annotated kidneys needed to achieve good segmentation performance. 
 
-#### Curriculum Learning: 
-the model starts learning from easy scenarios before turning to more difficult ones. (several variations around this!)
-
-#### Teacher-student network training:
-This has something to do with transfer learning - the teacher is like the pre-trained network, and the student is like the new problem statement + re-training/transfer domain adaptation thing.
-
-#### Bayesian Deep Learning:
-One way to increase their trustworthiness is to make them produce robust uncertainty estimates in addition to predictions. The field of Bayesian Deep Learning aims to
-combine deep learning and Bayesian approaches to uncertainty. 
-
-#### Transfer Learning: 
-Also called fine-tuning or pre-training: first you train a network to perform a task where there is an abundance of data, and then you copy weights from this network to a network designed for the task at hand.
-
-An interesting example is to do interorgan transfer learning in 3D, an idea we have used for kidney segmentation, where pre-training a network to do brain segmentation decreased the number of annotated kidneys needed to achieve good segmentation performance. 
-
-#### Federated Learning (or Differential Privacy): 
+### Federated Learning (or Differential Privacy): 
 Most current work on deep learning for medical data analysis use either open, anonymized data sets, or locally obtained anonymized research data, making these issues less relevant. However, the general deep learning community are focusing a lot of attention on the issue of privacy, and new techniques and frameworks for federated learning and differential privacy are rapidly improving. 
+
+### Skip connections:
+These make it possible to train much deeper networks. A 152 layer deep ResNet won the 2015 ILSVRC competition, and the authors also successfully trained a version with 1001 layers. Having skip connections in addition to the standard pathway gives the network the option to simply copy the activations from layer to layer (more precisely, from ResNet block to ResNet block), preserving information as data goes through the layers.
+
+### Image Super-resolution:
+Reconstructing a higher-resolution image or image sequence from the observed low-resolution image.
+
+### Data Augmentation:
+Augmenting the training data set can be done by applying various transformations that preserves the labels, as in rotations, scalings and intensity shifts of images, or more advanced data augmentation techniques like anatomically sound deformations (for medical image analysis), or other data set specific operations.
+
+TODO
+
+### Model warmup and validation patience
+
+### Saliency map
+
+### Regularization
+
+### Optimizer (ADAM, Gradient Descent family of, ...)
