@@ -30,7 +30,7 @@ If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM t
 " target="_blank"><img src="http://img.youtube.com/vi/jGLBcMyiehg/0.jpg" 
 alt="BENDER episode 02" width="640" height="480" border="10" /></a>
 
-See [glossary](/episode02/glossar.md) for a glossary of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo.
+Click [here for a glossary](/episode02/glossar.md) of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo.
 
 --------------------
 
