@@ -13,14 +13,44 @@ Other great glossaries to look at:
 * [Harvard Health](https://www.health.harvard.edu/a-through-c)
 * [CDC's glossary of Radiation](https://emergency.cdc.gov/radiation/pdf/glossary.pdf)
 * [Radacademy's glossary](https://www.asrt.org/radcademy/glossary) and [set of videos](https://www.asrt.org/radcademy/videos)
+* [NIBIB's glossary for Biomedical Imaging](https://www.nibib.nih.gov/science-education/glossary)
 
-### Exogenous and Endogenous contrast
+### Anatomical directions (from [here](https://training.seer.cancer.gov/anatomy/body/terminology.html))
 
-### hyper-intense, hypo-intense
+Superior or cranial - toward the head end of the body; upper (example, the hand is part of the superior extremity).
 
-### Lesions versus tumor versus target volume
+Inferior or caudal - away from the head; lower (example, the foot is part of the inferior extremity).
 
-### Anterior and Posterior, Dorsal and Ventral, Sagittal, Coronal and Axial, Radial and Lateral, Caudal/Cranial ...
+Anterior or ventral - front (example, the kneecap is located on the anterior side of the leg).
+
+Posterior or dorsal - back (example, the shoulder blades are located on the posterior side of the body).
+
+Medial - toward the midline of the body (example, the middle toe is located at the medial side of the foot).
+
+Lateral - away from the midline of the body (example, the little toe is located at the lateral side of the foot).
+
+Proximal - toward or nearest the trunk or the point of origin of a part (example, the proximal end of the femur joins with the pelvic bone).
+
+Distal - away from or farthest from the trunk or the point or origin of a part (example, the hand is located at the distal end of the forearm).
+
+### Planes of the body (from [here](https://training.seer.cancer.gov/anatomy/body/terminology.html))
+
+Coronal Plane (Frontal Plane) - A vertical plane running from side to side; divides the body or any of its parts into anterior and posterior portions.
+
+Sagittal Plane (Lateral Plane) - A vertical plane running from front to back; divides the body or any of its parts into right and left sides.
+
+Axial Plane (Transverse Plane) - A horizontal plane; divides the body or any of its parts into upper and lower parts.
+
+Median plane - Sagittal plane through the midline of the body; divides the body or any of its parts into right and left halves.
+
+### Computed Tomography (from [here](https://www.nibib.nih.gov/science-education/glossary))
+A computerized X-ray imaging procedure in which a narrow beam of X-rays is aimed at a patient and quickly rotated around the body, producing signals that are processed by the machine’s computer to generate cross-sectional images—or “slices”—of the body. These slices are called tomographic images and contain more detailed information about the internal organs than conventional X-rays. 
+
+### Magnetic Resonance Imaging (from [here](https://www.nibib.nih.gov/science-education/glossary))
+A non-invasive imaging technology used to investigate anatomy and function of the body in both health and disease without the use of damaging ionizing radiation. It is often used for disease detection, diagnosis, and treatment monitoring. It is based on sophisticated technology that excites and detects changes in protons found in the water that makes up living tissues.
+
+### fMRI (functional MRI) (from [here](https://www.nibib.nih.gov/science-education/glossary))
+An MRI-based technique for measuring brain activity. It works by detecting the changes in blood oxygenation and flow that occur in response to neural activity – when a brain area is more active it consumes more oxygen and to meet this increased demand blood flow increases to the active area. fMRI can be used to produce activation maps showing which parts of the brain are involved in a particular mental process.
 
 ### MRI sequences:
 This indicates the various modalities - T1, T1c, T2, FLAIR and so on. There could be one or more that are used for segmentation.
@@ -28,7 +58,21 @@ This indicates the various modalities - T1, T1c, T2, FLAIR and so on. There coul
 ### T1c:
 The C here stands for Contrast Enhancement. It appears that liquids and other features are more prominently displayed here. Gadolinium or what are other contrasts? 
 
+### Exogenous and Endogenous contrast
+
+### hyper-intense, hypo-intense
+
+hyper-intense translates to higher than normal/expected brightness/intensity, and hypo-intense is lower than normal/expected.
+
+### Lesions versus tumor versus target volume
+
 ## Technical terms that could confuse a clinician
+
+### AI versus Machine Learning (from [here](https://www.nibib.nih.gov/science-education/glossary))
+Machine Learning is a subset/type of AI, where a computer algorithm (a set of rules and procedures) is developed to analyze and make predictions from data that is fed into the system. Machine learning-based technologies are routinely used every day, such as personalized news feeds and traffic prediction maps.
+
+### (Artificial) Neural Networks (from [here](https://www.nibib.nih.gov/science-education/glossary))
+A machine learning approach modeled after the brain in which algorithms process signals via interconnected nodes called artificial neurons. Mimicking biological nervous systems, artificial neural networks have been used successfully to recognize and predict patterns of neural signals involved in brain function.
 
 ### Image properties related:
 
