@@ -4,19 +4,32 @@ Deep Learning and especially as applied to Medical Imaging seems to have several
 
 See https://youtu.be/Gbnep6RJinQ?t=1626 for a discussion around this very topic at Stanford AIMI.
 
-## Clinical terms that could confuse an engineer/technical person
+# Table of Contents
+1. [Clinical Terms for Technical folks](#clinical_terms)
+    - [Anatomical directions](#anatomical_directions)
+    - [Planes of the body](#planes_of_the_body)
+2. [Technical Terms for Clinical folks](#technical_terms)
+    - [AI](#ai)
+    - [Machine Learning](#machine_learning)
+    - [Deep Learning](#deep_learning)
+    - [Neural Networks](#neural_network)
+    - [Convolutional Neural Network](#cnn)
+    - [Image Classification](#image_classification)
+    - [Image Segmentation](#image_segmentation)
+    - [U-Net](#unet)
+    - [Dense Net](#dense_net)
+    - [Generative Adversarial Networks](#GAN)
+    - [Siamese Networks](#siamese_networks)
+    - [Transfer Learning](#transfer_learning)
+    - [Federated Learning](#federated_learning)
+    - [Skip Connections](#skip_connections)
+    - [Super-resolution](#superresolution)
+    - [Data Augmentation](#data_augmentation)
+3. [References](#references)
 
-See [Radiopaedia](https://radiopaedia.org/search) for a comprehensive list of clinical terms. [Radiology specific terms](https://radiopaedia.org/articles/terms-used-in-radiology) could be specifically more useful.
+## Clinical terms for Technical Folks <a name="clinical_terms"></a>
 
-Other great glossaries to look at: 
-
-* [Harvard Health](https://www.health.harvard.edu/a-through-c)
-* [CDC's glossary of Radiation](https://emergency.cdc.gov/radiation/pdf/glossary.pdf)
-* [Radacademy's glossary](https://www.asrt.org/radcademy/glossary) and [set of videos](https://www.asrt.org/radcademy/videos)
-* [NIBIB's glossary for Biomedical Imaging](https://www.nibib.nih.gov/science-education/glossary)
-* [MRI questions](https://mriquestions.com/complete-list-of-questions.html)
-
-### Anatomical directions (from [here](https://training.seer.cancer.gov/anatomy/body/terminology.html))
+### Anatomical directions (from [here](https://training.seer.cancer.gov/anatomy/body/terminology.html)) <a name="anatomical_directions"></a>
 
 Superior (general) or cranial (brain/neuro-focused) - toward the head end of the body; upper (example, the hand is part of the superior extremity).
 
@@ -34,7 +47,7 @@ Proximal - toward or nearest the trunk or the point of origin of a part (example
 
 Distal - away from or farthest from the trunk or the point or origin of a part (example, the hand is located at the distal end of the forearm).
 
-### Planes of the body (from [here](https://training.seer.cancer.gov/anatomy/body/terminology.html))
+### Planes of the body (from [here](https://training.seer.cancer.gov/anatomy/body/terminology.html)) <a name="planes_of_the_body"></a>
 
 Coronal Plane (Frontal Plane) - A vertical plane running from side to side; divides the body or any of its parts into anterior and posterior portions.
 
@@ -69,60 +82,54 @@ TODO
 
 ### Lesions versus tumor versus target volume
 
-## Technical terms that could confuse a clinician
+## Technical terms for Clinical Folks <a name="technical_terms"></a>
 
-Here are some references for a more exhaustive list of terms, some of which we have reproduced here:
-
-* [tasq.ai's Glossary of AI terminology](https://www.tasq.ai/glossary/)
-* [NIBIB's glossary of Medical Imaging](https://www.nibib.nih.gov/science-education/glossary)
-* [AI: a glossary of terms for AI in Medical Imaging](https://link.springer.com/content/pdf/bbm%3A978-3-319-94878-2%2F1.pdf)
-
-### AI (from [here](https://www.tasq.ai/glossary/artificial-intelligence/))
+### AI (from [here](https://www.tasq.ai/glossary/artificial-intelligence/)) <a name="ai"></a>
 The objective of AI is to make computers/computer programs clever enough to mimic the behavior of our brains. This is intentionally a broad term, and Machine Learning, Deep Learning are merely subsets (specific instances of a type of AI) which have recently shown tremendous success, so much so, that Machine Learning is almost synomymous to AI. 
 
-### Machine Learning (from [here](https://www.nibib.nih.gov/science-education/glossary))
+### Machine Learning (from [here](https://www.nibib.nih.gov/science-education/glossary)) <a name="machine_learning"></a>
 Machine Learning is a subset/type of AI, where a computer algorithm (a set of rules and procedures) is developed to analyze and make predictions from data that is fed into the system. Machine learning-based technologies are routinely used every day, such as personalized news feeds and traffic prediction maps.
 
-### Deep Learning (from [here](https://www.nibib.nih.gov/science-education/glossary))
+### Deep Learning (from [here](https://www.nibib.nih.gov/science-education/glossary)) <a name="deep_learning"></a>
 A form of machine learning that uses many layers of computation to form what is described as a deep neural network, capable of learning from large amounts of complex, unstructured data. Deep neural networks are responsible for voice-controlled virtual assistants as well as self-driving vehicles, which learn to recognize traffic signs.
 
-### (Artificial) Neural Networks (from [here](https://www.nibib.nih.gov/science-education/glossary))
+### (Artificial) Neural Networks (from [here](https://www.nibib.nih.gov/science-education/glossary)) <a name="neural_network"></a>
 A machine learning approach modeled after the brain in which algorithms process signals via interconnected nodes called artificial neurons. Mimicking biological nervous systems, artificial neural networks have been used successfully to recognize and predict patterns of neural signals involved in brain function.
 
-### Convolutional Neural Networks (from [here](https://www.tasq.ai/glossary/convolutional-neural-network-cnn/))
+### Convolutional Neural Networks (from [here](https://www.tasq.ai/glossary/convolutional-neural-network-cnn/)) <a name="cnn"></a>
 A Convolutional Neural Network (CNN) is a Deep Learning system that can take an input picture, give relevance (learnable weights and biases) to various aspects/objects in the image, and distinguish between them. When compared to other classification algorithms, the amount of pre-processing required by a CNN is significantly less. While filters are hand-engineered in basic approaches, CNN can learn these filters/characteristics with adequate training.
 
-### Image Classification (from [here](https://www.tasq.ai/glossary/classification/))
+### Image Classification (from [here](https://www.tasq.ai/glossary/classification/)) <a name="image_classification"></a>
 Classification is described as the operation of identifying, interpreting, and organizing objects into specified groups. A great example of classification is to categorize emails as “spam” or “non-spam,” as employed by today’s leading email service providers. For medical images, this could mean marking the entire image as "healthy" or "cancerous" - without any more details about what makes it cancerous or not. 
 
-### Image Segmentation
+### Image Segmentation <a name="image_segmentation"></a>
 Segmentation (more specifically, semantic or pixel-wise segmentation) is the operation of classifying each pixel/component of an image into categories. For example, what part of a pathology slide is part of a cell? What are the boundaries of the brain in a MR image? Specialized AI models/systems exist to automatically estimate these boundaries with fairly high accuracies compared to humans, at a fraction of the time/cost. 
 
-### U-Net (from [here](https://www.tasq.ai/glossary/u-net/))
+### U-Net (from [here](https://www.tasq.ai/glossary/u-net/)) <a name="unet"></a>
 U-net was created for neural network image segmentation and was the first to use it. Its design is roughly divided into two parts: an encoder network and a decoder network. Unlike classification, where the U-net network’s final output is the only thing that matters, semantic segmentation necessitates not just pixel-level discrimination but also a technique to construct the discriminative features learned at various stages of the encoder onto the image pixels.
 
-### Dense Net:
+### Dense Net <a name="dense_net"></a>
 These build on the ideas of ResNet, but instead of adding the activations produced by one layer to later layers, they are simply concatenated together. The original inputs in addition to the activations from previous layers are therefore kept at each layer (again, more precisely, between blocks of layers), preserving some kind of global state. This encourages feature reuse and lowers the number of parameters for a given depth. DenseNets are therefore particularly well-suited for smaller data sets (outperforming others on e.g. Cifar-10 and Cifar-100)
 
-### Generative Adversarial Networks:
+### Generative Adversarial Networks <a name="GAN"></a>
 A generative adversarial network consists of two neural networks pitted against each other. The generative network G is tasked with creating samples that the discriminative network D is supposed to classify as coming from the generative network or the training data. The networks are trained simultaneously, where G aims to maximize the probability that D makes a mistake while D aims for high classification accuracy.
 
-### Siamese Networks:
+### Siamese Networks <a name="siamese_networks"></a>
 A Siamese network consists of two identical neural networks, both the architecture and the weights, attached at the end. They are trained together to differentiate pairs of inputs. Once trained, the features of the networks can be used to perform one-shot learning without retraining
 
-### Transfer Learning or fine-tuning
+### Transfer Learning or fine-tuning <a name="transfer_learning"></a>
 Also called fine-tuning or pre-training: first you train a network to perform a task where there is an abundance of data, and then you copy weights from this network to a network designed for the task at hand. An interesting example is to do interorgan transfer learning in 3D, an idea we have used for kidney segmentation, where pre-training a network to do brain segmentation decreased the number of annotated kidneys needed to achieve good segmentation performance. 
 
-### Federated Learning (or Differential Privacy): 
+### Federated Learning (or Differential Privacy) <a name="federated_learning"></a>
 Most current work on deep learning for medical data analysis use either open, anonymized data sets, or locally obtained anonymized research data, making these issues less relevant. However, the general deep learning community are focusing a lot of attention on the issue of privacy, and new techniques and frameworks for federated learning and differential privacy are rapidly improving. 
 
-### Skip connections:
+### Skip connections <a name="skip_connections"></a>
 These make it possible to train much deeper networks. A 152 layer deep ResNet won the 2015 ILSVRC competition, and the authors also successfully trained a version with 1001 layers. Having skip connections in addition to the standard pathway gives the network the option to simply copy the activations from layer to layer (more precisely, from ResNet block to ResNet block), preserving information as data goes through the layers.
 
-### Image Super-resolution:
+### Image Super-resolution <a name="superresolution"></a>
 Reconstructing a higher-resolution image or image sequence from the observed low-resolution image.
 
-### Data Augmentation:
+### Data Augmentation <a name="data_augmentation"></a>
 Augmenting the training data set can be done by applying various transformations that preserves the labels, as in rotations, scalings and intensity shifts of images, or more advanced data augmentation techniques like anatomically sound deformations (for medical image analysis), or other data set specific operations.
 
 TODO
@@ -134,3 +141,19 @@ TODO
 ### Regularization
 
 ### Optimizer (ADAM, Gradient Descent family of, ...)
+
+## References <a name="references"></a>
+
+See [Radiopaedia](https://radiopaedia.org/search) for a comprehensive list of clinical terms. [Radiology specific terms](https://radiopaedia.org/articles/terms-used-in-radiology) could be specifically more useful. Here are some more links for clinical terms:
+
+* [Harvard Health](https://www.health.harvard.edu/a-through-c)
+* [CDC's glossary of Radiation](https://emergency.cdc.gov/radiation/pdf/glossary.pdf)
+* [Radacademy's glossary](https://www.asrt.org/radcademy/glossary) and [set of videos](https://www.asrt.org/radcademy/videos)
+* [NIBIB's glossary for Biomedical Imaging](https://www.nibib.nih.gov/science-education/glossary)
+* [MRI questions](https://mriquestions.com/complete-list-of-questions.html)
+
+Here are some references for a more exhaustive list of technical terms, some of which we have reproduced here:
+
+* [tasq.ai's Glossary of AI terminology](https://www.tasq.ai/glossary/)
+* [NIBIB's glossary of Medical Imaging](https://www.nibib.nih.gov/science-education/glossary)
+* [AI: a glossary of terms for AI in Medical Imaging](https://link.springer.com/content/pdf/bbm%3A978-3-319-94878-2%2F1.pdf)
