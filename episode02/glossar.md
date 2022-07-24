@@ -1,8 +1,8 @@
 # Glossary
 
-Deep Learning and especially as applied to Medical Imaging seems to have several terms that are thrown around - which are difficult to really track and remember at all times. This page is meant to include a single line (or only slightly longer) description of some of these commonly used terms, so that reading papers and talking to peers is easier than otherwise.
+Deep Learning and especially as applied to Medical Imaging seems to have a lot of jargon - which is difficult to track and remember at all times. This page, part of the [BENDER Series](https://github.com/ubern-mia/bender), is meant to include a single line (or only slightly longer) description of some of these commonly used terms, so that reading papers and talking to research collaborators is easier than otherwise.
 
-See https://youtu.be/Gbnep6RJinQ?t=1626 for a discussion around this very topic at Stanford AIMI.
+See [here](https://youtu.be/Gbnep6RJinQ?t=1626) for an interesting discussion around this very topic.
 
 # Table of Contents
 1. [Clinical Terms for Technical folks](#clinical_terms)
@@ -160,3 +160,5 @@ Here are some references for a more exhaustive list of technical terms, some of 
 * [tasq.ai's Glossary of AI terminology](https://www.tasq.ai/glossary/)
 * [NIBIB's glossary of Medical Imaging](https://www.nibib.nih.gov/science-education/glossary)
 * [AI: a glossary of terms for AI in Medical Imaging](https://link.springer.com/content/pdf/bbm%3A978-3-319-94878-2%2F1.pdf)
+
+For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in the BENDER repository.

@@ -1,6 +1,6 @@
-# Checklist: Data Pile
+# Checklist: The Data Pile
 
-This document is a one-page checklist with: questions-to-ask-yourself *after* you have access to clinical imaging data, but, *before* you start to use it to build models.  
+This is a one-page checklist, part of the [BENDER Series](https://github.com/ubern-mia/bender), with questions-to-ask-yourself *after* you have access to clinical imaging data, but, *before* you start to use it to build models.  
 
 - [ ] (1) List out pixel/voxel dimensions (number of elements) and spacing (in mm), for each subject in the data set (See [here](https://simpleitk.readthedocs.io/en/master/link_DicomImagePrintTags_docs.html) for how to list them from DICOM). We highly recommend saving this meta-data in a .csv file for each subject. 
 
@@ -15,6 +15,5 @@ This document is a one-page checklist with: questions-to-ask-yourself *after* yo
 - [ ] (6) (optional) If your data comes from multiple sources, check if there are biases due to acquisition/processing protocols or imaging hardware vendors. Often, these biases could creep into models which can eventually lead to them learning these biases and hence generalizing worse on new data samples. Your clinical collaborator or the image metadata should have this information.
 
 - [ ] (7) (optional) Consider registering all the subjects to a known atlas for that anatomy. For brain imaging studies, [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases) lists some popular ones. This can be useful as further spatial normalization.  
- 
 
-For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in this repository.
+For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in the BENDER repository.

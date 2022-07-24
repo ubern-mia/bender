@@ -14,13 +14,15 @@ We hope through the experience of this student, you learn not to make the same m
 " target="_blank"><img src="http://img.youtube.com/vi/NtszpkE0gc4/0.jpg" 
 alt="BENDER episode 01" width="640" height="480" border="10" /></a>
 
-See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid 💣 surprises later on.
+See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid 💣 surprises later on. A downloadable PDF version is [here](/episode01/checklist.pdf).
 
 [Exploring the Dermamnist data set](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dermamnist.ipynb) is a notebook that uses data from  [MedMNIST](https://medmnist.com/) to demonstrate examples of the kinds of details you should look for, while analyzing your clinical data.
 
 If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM tags](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dicom.ipynb) is a notebook to demonstrate how to go about looking at the non-image metadata as well! 
 
 [Here](http://www.r2d3.us/) is a wonderful (non-medical-imaging) example of how simply "looking" at the data prior to modeling helps make sense of the landscape, and is a step that one must not neglect while starting off!
+
+For more specialized data, there are standards like [BIDS](https://bids.neuroimaging.io), Brain Imaging Data structure, for organizing multiple subject files for neuroimaging. Consider conforming to such formats to ensure easier read/write/convert workflows with your data set.
 
 --------------------
 
@@ -30,7 +32,7 @@ If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM t
 " target="_blank"><img src="http://img.youtube.com/vi/jGLBcMyiehg/0.jpg" 
 alt="BENDER episode 02" width="640" height="480" border="10" /></a>
 
-Click [here for a glossary](/episode02/glossar.md) of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo.
+Click [here for a glossary](/episode02/glossar.md) of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo. A downloadable PDF version is [here](/episode02/glossar.pdf).
 
 --------------------
 
@@ -54,5 +56,6 @@ In this final episode, the focus is on evaluation and deployment: specific point
 
 We hope you learn something new about how to get started with Medical Imaging and Deep Learning, and more importantly, that you have fun while learning! (If you have suggestions for improvement, please do not hesitate to create an [issue here](https://github.com/ubern-mia/bender/issues))
 
+--------------------
 
 👋 The Medical Imaging Analysis group at Universität Bern
