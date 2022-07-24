@@ -8,7 +8,7 @@ We hope through the experience of this student, you learn not to make the same m
 
 --------------------
 
-## Episode 1: “The data pile” 
+## Episode 1: “Exploratory analysis: The Data Pile” 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=NtszpkE0gc4
 " target="_blank"><img src="http://img.youtube.com/vi/NtszpkE0gc4/0.jpg" 
@@ -24,7 +24,7 @@ If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM t
 
 --------------------
 
-## Episode 2: “Medical image computing is not the same as computing on medical images” 
+## Episode 2: “Terminology: Meet the Experts” 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=jGLBcMyiehg
 " target="_blank"><img src="http://img.youtube.com/vi/jGLBcMyiehg/0.jpg" 
@@ -34,7 +34,7 @@ Click [here for a glossary](/episode02/glossar.md) of common terms used in the D
 
 --------------------
 
-## Episode 3: “Modeling”
+## Episode 3: “Training models: Good model training shall you strive for”
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=f0wd8EvRiH0
 " target="_blank"><img src="http://img.youtube.com/vi/f0wd8EvRiH0/0.jpg" 
@@ -44,7 +44,7 @@ This episode focuses on the next step of actually building a model: starting fro
 
 --------------------
 
-## Episode 4: “Evaluating your model: we are out of the sandbox”
+## Episode 4: “Evaluating your model: Born to Deploy”
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YwM7qwqSy9k
 " target="_blank"><img src="http://img.youtube.com/vi/YwM7qwqSy9k/0.jpg" 
