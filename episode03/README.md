@@ -158,7 +158,7 @@ For this version, the test accuracy is again lower than the previous one, pointi
 
 ## Seventh version:
 
-Adding data augmentation at the end, to imclude some regularization and possibly improve generalization.
+Finally, we attempt to address the overfitting problem by including some regularization (a method to better condition the model training) using Data Augmentation. As with previous versions, the only change between [v6](/episode03/dermamnist_v6_even_deeper_network.py) and [this version](/episode03/dermamnist_v7_with_augm.py) is in the `load_datasets` helper function, where the training data loader uses the following transforms:
 
     training_transform_medmnist = transforms.Compose(
         [
@@ -171,6 +171,18 @@ Adding data augmentation at the end, to imclude some regularization and possibly
             transforms.RandomVerticalFlip(p=0.5),
         ]
     )
+
+![Training and Validation losses and accuracies](/episode03/dermamnist_v7_with_augm/training_val_v4_7.png)
+
+In the image above, the blue curves correspond to [v4: small network](/episode03/dermamnist_v4_adam_TB.py), cyan curves are for [v5: deeper network](/episode03/dermamnist_v5_deeper_network.py), pink curves are for [v6: even deeper network](/episode03/dermamnist_v6_even_deeper_network.py), and finally the green curves represent the [current version](/episode03/dermamnist_v7_with_augm.py).
+
+Note here how the training accuracy appears to be the lowest amongst all the variants, but the validation accuracy does not drop off with more iterations: this is precisely how overfitting is avoided! 
+
+![Test accuracy and classification report](/episode03/dermamnist_v7_with_augm/test_accuracy_v7.png)
+
+For this version, we note that the test accuracy is now 0.770, higher than all the benchmarks listed on the [MedMNIST webpage](https://medmnist.com)! Mote also that the `dermatofibroma` category is no longer 0 in it's metrics, and nearly all categories have precisions greater than all previous versions. 
+
+We hope you had as much fun following along this journey as we did, and that you will experiment with these methods to explore how to train your deep neural networks better!
 
 --------------------
 

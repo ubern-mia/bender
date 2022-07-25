@@ -61,7 +61,7 @@ def load_datasets(flag):
     transform_medmnist = transforms.Compose([transforms.ToTensor(), transforms.Pad(2)])
 
     data_train = DataClass(
-        split="train", transform=transform_medmnist, download=download
+        split="train", transform=training_transform_medmnist, download=download
     )
     if flag == "train":
         data_next = DataClass(
