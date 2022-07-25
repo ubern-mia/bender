@@ -88,17 +88,55 @@ However, we also introduce Tensorboard to log the training progress: the same pa
 
 Modifying the network itself to be deeper and hopefully more capable in handling a difficult data distribution.
 
+    ...
+    nn.Conv2d(64, 128, (3, 3), padding=1, stride=2, bias=False),
+    nn.BatchNorm2d(128),
+    nn.ReLU(),
+    # (64, 16, 16)
+    nn.Conv2d(128, 128, (3, 3), padding=1, bias=False),
+    nn.BatchNorm2d(128),
+    nn.ReLU(),
+    # (64, 16, 16)
+    nn.Conv2d(128, 128, (3, 3), padding=1, bias=False),
+    nn.BatchNorm2d(128),
+    nn.ReLU(),
+    # (128, 8, 8)
+    ...
+
 --------------------
 
 ## Sixth version:
 
 Making the network even more deeper - based on improvements seen in the previous version.
 
+    ...
+    nn.ReLU(),
+    # (64, 16, 16)
+    nn.Conv2d(128, 256, (3, 3), padding=1, stride=2, bias=False),
+    nn.BatchNorm2d(256),
+    nn.ReLU(),
+    # (128, 8, 8)
+    nn.Conv2d(256, 256, (3, 3), padding=1, bias=False),
+    nn.BatchNorm2d(256),
+    ...
+
 --------------------
 
 ## Seventh version:
 
 Adding data augmentation at the end, to imclude some regularization and possibly improve generalization.
+
+    training_transform_medmnist = transforms.Compose(
+        [
+            transforms.ToTensor(),
+            transforms.Pad(2),
+            transforms.RandomCrop(
+                size=(32, 32), padding=(0, 0, 5, 5), padding_mode="reflect"
+            ),
+            transforms.RandomHorizontalFlip(p=0.5),
+            transforms.RandomVerticalFlip(p=0.5),
+        ]
+    )
 
 --------------------
 
