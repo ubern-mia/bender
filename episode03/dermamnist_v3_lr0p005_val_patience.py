@@ -1,32 +1,43 @@
-from typing import Any
+"""
+dermamnist_v3_lr0p005_val_patience:
+changelog: updated learning rate to 0.005 from 0.000005 and included validation patience.
+"""
+
 import os
-from numpy import False_
-
-from tqdm import tqdm
-
-import torch as th
-from torch import nn
-from torch.utils.data import DataLoader
-
-import matplotlib.pyplot as plt
 
 import medmnist
 from medmnist import INFO
+
+import torch
+from torch import nn
+from torch.utils.data import DataLoader
 from torchvision import transforms
+
+from tqdm import tqdm
+import matplotlib.pyplot as plt
 
 from sklearn.metrics import classification_report
 
 # Define the torch.device you will use.
-device = th.device("cuda" if th.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def _get_output_path() -> str:
-    """Return an output path with the name of the current file."""
+    """
+    Return an output path with the name of the current file.
+    """
+
     base, _ = os.path.splitext(os.path.relpath(__file__))
     return base
 
 
 def load_datasets(flag):
+    """
+    load_datasets loads the dermamnist data.
+    'flag' takes two options:
+        'train': loads the training set as first output, validation set as second.
+        'test' : loads the training set as first output, test set as second.
+    """
 
     data_flag = "dermamnist"
     download = True
@@ -52,7 +63,15 @@ def load_datasets(flag):
 
 
 class CNN(nn.Module):
+    """
+    A simple 4 layered CNN to run classification on dermamnist.
+    """
+
     def __init__(self):
+        """
+        Definition of layers in the CNN.
+        """
+
         super().__init__()
         self.features = nn.Sequential(
             nn.Conv2d(3, 64, (5, 5), padding=2, bias=False),
@@ -77,15 +96,22 @@ class CNN(nn.Module):
 
         self.classifier = nn.Sequential(nn.Linear(64, 7))
 
-    def forward(self, x):
-        x = self.features(x)
-        x = self.avgpool(x)
-        x = th.reshape(x, (-1, 64))
-        return self.classifier(x)
+    def forward(self, in_tensor):
+        """
+        Forward pass through the CNN.
+        """
+
+        in_tensor = self.features(in_tensor)
+        in_tensor = self.avgpool(in_tensor)
+        in_tensor = torch.reshape(in_tensor, (-1, 64))
+        return self.classifier(in_tensor)
 
 
-@th.no_grad()
+@torch.no_grad()
 def evaluate_model(model: nn.Module, loader: DataLoader):
+    """
+    Evaluate model while training.
+    """
 
     data_flag = "dermamnist"
     info = INFO[data_flag]
@@ -106,14 +132,14 @@ def evaluate_model(model: nn.Module, loader: DataLoader):
         # calculate outputs by running images through the network
         outputs = model(images)
         # the class with the highest energy is what we choose as prediction
-        _, predicted = th.max(outputs.data, 1)
+        _, predicted = torch.max(outputs.data, 1)
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
 
-        for x in predicted.numpy().tolist():
-            pred_list.append(x)
-        for x in labels.numpy().tolist():
-            label_list.append(x)
+        for pred in predicted.numpy().tolist():
+            pred_list.append(pred)
+        for label in labels.numpy().tolist():
+            label_list.append(label)
 
     print(
         classification_report(
@@ -125,9 +151,10 @@ def evaluate_model(model: nn.Module, loader: DataLoader):
     return metrics
 
 
-def train(
-    output_path: str = None, batch_size: int = 8, num_epochs: int = 100, max_patience=30
-):
+def train(output_path: str = None, batch_size: int = 8, num_epochs: int = 100, max_patience=30):
+    """
+    Train model.
+    """
 
     if output_path is None:
         output_path = _get_output_path()
@@ -143,15 +170,15 @@ def train(
     # Define the model and move it to the device. Define the optimizer for
     # the parameters of the model.
     model = CNN()
-    optimizer = th.optim.SGD(model.parameters(), lr=0.005, momentum=0.9)
-    loss_function = th.nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.9)
+    loss_function = torch.nn.CrossEntropyLoss()
 
     # Compute the number of parameters of the model
     num_params = sum(p.numel() for p in model.parameters())
     print(f"Number of parameters: {num_params}")
 
     # Iteration counter
-    it = 0
+    iteration = 0
 
     train_loss = []
     val_acc = []
@@ -173,7 +200,7 @@ def train(
         # Run one epoch
         for batch in tqdm(loader_train):
 
-            it += 1
+            iteration += 1
 
             # IMPORTANT NOTE: REMEMBER TO SET THE TRAINING STATE OF THE MODEL.
             # Call .train() before training and .eval() before evaluation every
@@ -197,13 +224,13 @@ def train(
             optimizer.step()
 
             # Log the training loss once every 50 iterations
-            if (it % 50) == 0:
-                train_loss.append([loss, it])
+            if (iteration % 50) == 0:
+                train_loss.append([loss, iteration])
 
             # Run validation, update patience, and save the model once every epoch.
             # You could put this code outside the inner training loop, but
             # doing it here allows you to run validation more than once per epoch.
-            if (it % epoch_length) == 0:
+            if (iteration % epoch_length) == 0:
 
                 batch = next(iter(loader_val))
 
@@ -222,7 +249,7 @@ def train(
 
                 # Loop over the metrics and log them to tensorboard
                 for key in metrics.keys():
-                    val_acc.append([metrics[key], it])
+                    val_acc.append([metrics[key], iteration])
 
                 accuracy = metrics["accuracy"]
                 if accuracy > best_accuracy:
@@ -235,7 +262,7 @@ def train(
                     # In principle, you should save not only the model,
                     # but also the optimizer just in case you want to resume an
                     # interrupted training.
-                    th.save(model.state_dict(), model_file)
+                    torch.save(model.state_dict(), model_file)
                 else:
                     patience -= 1
 
@@ -267,11 +294,13 @@ def train(
 
 
 def test():
-    # Test model loading after training.
+    """
+    Test model after training.
+    """
 
     model = CNN()
     model_path = _get_output_path()
-    model.load_state_dict(th.load(model_path + "/best_model.pt"))
+    model.load_state_dict(torch.load(model_path + "/best_model.pt"))
 
     # Print model's state_dict
     print("Model's state_dict:")
@@ -281,16 +310,17 @@ def test():
     num_params = sum(p.numel() for p in model.parameters())
     print(f"Number of parameters: {num_params}")
 
-    data_train, data_test = load_datasets("test")
+    _, data_test = load_datasets("test")
     loader_test = DataLoader(data_test, batch_size=8, shuffle=False)
 
     metrics = evaluate_model(model, loader_test)
-    print(f"Test accuracy is: ", metrics["accuracy"])
+    print(f"Test accuracy is: {metrics['accuracy']}")
 
 
 if __name__ == "__main__":
-    training = False
-    if training:
+
+    TRAINING_MODE = True
+    if TRAINING_MODE:
         train()
     else:
         test()

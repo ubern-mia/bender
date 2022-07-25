@@ -1,5 +1,6 @@
 """
-dermamnist_v1_initial: This is a naive version of training a simple 4 layer CNN.
+dermamnist_v1_initial:
+This is a naive version of training a simple 4 layer CNN.
 """
 
 import os
@@ -95,21 +96,21 @@ class CNN(nn.Module):
 
         self.classifier = nn.Sequential(nn.Linear(64, 7))
 
-    def forward(self, x):
+    def forward(self, in_tensor):
         """
         Forward pass through the CNN.
         """
 
-        x = self.features(x)
-        x = self.avgpool(x)
-        x = torch.reshape(x, (-1, 64))
-        return self.classifier(x)
+        in_tensor = self.features(in_tensor)
+        in_tensor = self.avgpool(in_tensor)
+        in_tensor = torch.reshape(in_tensor, (-1, 64))
+        return self.classifier(in_tensor)
 
 
 @torch.no_grad()
 def evaluate_model(model: nn.Module, loader: DataLoader):
     """
-    Evalute model while training.
+    Evaluate model while training.
     """
 
     data_flag = "dermamnist"
@@ -135,10 +136,10 @@ def evaluate_model(model: nn.Module, loader: DataLoader):
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
 
-        for x in predicted.numpy().tolist():
-            pred_list.append(x)
-        for x in labels.numpy().tolist():
-            label_list.append(x)
+        for pred in predicted.numpy().tolist():
+            pred_list.append(pred)
+        for label in labels.numpy().tolist():
+            label_list.append(label)
 
     print(
         classification_report(
@@ -177,7 +178,7 @@ def train(output_path: str = None, batch_size: int = 8, num_epochs: int = 100):
     print(f"Number of parameters: {num_params}")
 
     # Iteration counter
-    it = 0
+    iteration = 0
 
     train_loss = []
     val_acc = []
@@ -199,7 +200,7 @@ def train(output_path: str = None, batch_size: int = 8, num_epochs: int = 100):
         # Run one epoch
         for batch in tqdm(loader_train):
 
-            it += 1
+            iteration += 1
 
             # IMPORTANT NOTE: REMEMBER TO SET THE TRAINING STATE OF THE MODEL.
             # Call .train() before training and .eval() before evaluation every
@@ -223,13 +224,13 @@ def train(output_path: str = None, batch_size: int = 8, num_epochs: int = 100):
             optimizer.step()
 
             # Log the training loss once every 50 iterations
-            if (it % 50) == 0:
-                train_loss.append([loss, it])
+            if (iteration % 50) == 0:
+                train_loss.append([loss, iteration])
 
             # Run validation, update patience, and save the model once every epoch.
             # You could put this code outside the inner training loop, but
             # doing it here allows you to run validation more than once per epoch.
-            if (it % epoch_length) == 0:
+            if (iteration % epoch_length) == 0:
 
                 batch = next(iter(loader_val))
 
@@ -248,7 +249,7 @@ def train(output_path: str = None, batch_size: int = 8, num_epochs: int = 100):
 
                 # Loop over the metrics and log them to tensorboard
                 for key in metrics.keys():
-                    val_acc.append([metrics[key], it])
+                    val_acc.append([metrics[key], iteration])
 
                 accuracy = metrics["accuracy"]
                 if accuracy > best_accuracy:

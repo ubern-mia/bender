@@ -56,8 +56,8 @@ alt="BENDER episode 04" width="640" height="480" border="10" /></a>
 
 In this final episode, the focus is on evaluation and deployment: specific points that are important to keep in mind for clinical relevance, out-of-distribution data, and other interesting bits.
 
-We hope you learn something new about how to get started with Medical Imaging and Deep Learning, and more importantly, that you have fun while learning! (If you have suggestions for improvement, please do not hesitate to create an [issue here](https://github.com/ubern-mia/bender/issues))
-
 --------------------
+
+We hope you learn something new about how to get started with Medical Imaging and Deep Learning, and more importantly, that you have fun while learning! (If you have suggestions for improvement, please do not hesitate to create an [issue here](https://github.com/ubern-mia/bender/issues))
 
 👋 The Medical Imaging Analysis group at Universität Bern
