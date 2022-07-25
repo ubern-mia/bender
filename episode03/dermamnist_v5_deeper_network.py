@@ -112,7 +112,7 @@ class CNN(nn.Module):
 
         in_tensor = self.features(in_tensor)
         in_tensor = self.avgpool(in_tensor)
-        in_tensor = torch.reshape(in_tensor, (-1, 64))
+        in_tensor = torch.reshape(in_tensor, (-1, 128))
         return self.classifier(in_tensor)
 
 

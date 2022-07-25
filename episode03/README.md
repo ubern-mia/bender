@@ -4,7 +4,7 @@ At this stage, you hopefully have the data organized and curated in a way that i
 
 --------------------
 
-## Observations on the initial version:
+## Initial version:
 
 We start with the notebook [DermaMNIST Initial Version](/episode03/dermamnist_v1_initial.ipynb) to demonstrate our recommended process. If you prefer a python script, consider opening [this](/episode03/dermamnist_v1_initial.py). This is admittedly a first attempt, and there are many improvements we can make. 
 
@@ -80,7 +80,7 @@ changed to
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
 
-However, we also introduce Tensorboard to log the training progress: the same parameters: training (and additionally validation) loss as well as validation (and additionally training) accuracy. Since the code changes are relatively large compared to the previous versions, we have prepared a new [ipynb](/episode03/dermamnist_v4_adam_TB.ipynb) notebook to start off again, if you prefer.
+However, we also introduce [Tensorboard](https://pytorch.org/docs/stable/tensorboard.html) to log the training progress for the same parameters: training (and additionally validation) loss as well as validation (and additionally training) accuracy. Since the code changes are relatively large compared to the previous versions, we have prepared a new [ipynb](/episode03/dermamnist_v4_adam_TB.ipynb) notebook to start off again, if you prefer.
 
 --------------------
 
