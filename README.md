@@ -1,8 +1,10 @@
 # The 🤖 BENDER series:
 
-Are you a new(ish) Graduate or a super-enthusiastic Undergraduate student working with Medical Image data, and pondering over how to get that Deep Learning model to train with it? If so, this repository is for you: it supports the [BENDER (BEst practices in medical imagiNg DEep leaRning) series of videos](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp), which is submitted to [the MICCAI Education Challenge, 2022](https://miccai-sb.github.io/challenge.html).
+Are you a new(ish) Graduate or a super-enthusiastic Undergraduate student working with Medical Image data, and pondering over how to get that Deep Learning model to train with it? If so, this repository is for you: 
 
-We invite you to watch along the following four episodes (click on the pictures below to watch on YouTube) that track the life and times of a new student who has just started working with this kind of data: through the ups and downs of his journey to build a State-of-The-Art model. 
+It supports the [BENDER (BEst practices in medical imagiNg DEep leaRning) series of videos](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp), which is submitted to [the MICCAI Education Challenge, 2022](https://miccai-sb.github.io/challenge.html).
+
+We invite you to watch along the following four episodes (click on the pictures below to watch on YouTube) that track the life and times of a new student who has just started working with this kind of data: through the ups and downs of the journey to build a State-of-The-Art model. 
 
 We hope through the experience of this student, you learn not to make the same mistakes, and get a head-start in your own exploration.  
 
@@ -42,7 +44,7 @@ Click [here for a glossary](/episode02/glossar.md) of common terms used in the D
 " target="_blank"><img src="http://img.youtube.com/vi/f0wd8EvRiH0/0.jpg" 
 alt="BENDER episode 03" width="640" height="480" border="10" /></a>
 
-This episode focuses on the next step of actually building a model: starting from a naive implementation, walking through the process of improving it iteratively to get to a better state, while also understanding how to evaluate if it is indeed getting better!
+[Follow along this episode](/episode03/README.md) for the next step of actually building a model: starting with a naive implementation (as [ipynb](/episode03/dermamnist_v1_initial.ipynb) or a [py script](/episode03/dermamnist_v1_initial.py)), walking through the process of improving it iteratively in seven versions to get to a better state, while also understanding how to evaluate if it is indeed getting better!
 
 --------------------
 
