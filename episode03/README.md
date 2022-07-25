@@ -22,7 +22,7 @@ Validation accuracy for initial version: even if we stopped at 10000 iterations,
 
 ## Second version:
 
-Modifying the momentum hyperparameter, keeping everything else the same. The difference between [v1](/episode03/dermamnist_v1_initial.py) and [v2](/episode03/dermamnist_v2_momentum0p9.py) is just the following line:
+For this version, we modify only the momentum hyperparameter, keeping everything else the same. The difference between [v1](/episode03/dermamnist_v1_initial.py) and [v2](/episode03/dermamnist_v2_momentum0p9.py) is just the following line:
 
     optimizer = torch.optim.SGD(model.parameters(), lr=0.000005, momentum=0.5)
 
@@ -34,23 +34,25 @@ Make this change in your notebook, and verify that you see similar results as we
 
 ![training loss after momemtum change](/episode03/dermamnist_v2_momentum0p9/train_loss.png)
 
-Training loss after change of momentum to 0.9 from 0.5
+Training loss after change of momentum to 0.9 from 0.5: note that this is still noisy like v1, but the loss reduces faster: breaching the value of 1.0 is under 10000 iterations as compared to 20000 earlier. 
 
 ![validation accuracy after momemtum change](/episode03/dermamnist_v2_momentum0p9/val_acc.png)
 
-Validation accuracy after change of momentum to 0.9 from 0.5
+Validation accuracy after change of momentum to 0.9 from 0.5: there's not much change here, the accuracy appears to remain in the same range, indicating that we should explore modifying other hyperparameters, or, even changing the model itself.
 
 ## Third version:
 
-Changing the learning rate, and also introducing validation patience, to avoid wasting training cycles if the model is not generalizing.
-
-We change the learning rate on this line:
+In the spirit of tweaking hyperparameters, we make another change here, where we increase the learning rate (one of the most sensitive, and hence most tweaked hyperparameters), so that the network weights can learn 'faster'. The functional difference between [v2](/episode03/dermamnist_v2_momentum0p9.py) and [v3](/episode03/dermamnist_v3_lr0p005_val_patience.py) is just the following line:
 
     optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.5)
 
 changed to 
 
     optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.9)
+
+Additionally, we make another modification which doesn't change the training algorithm per-se, but adds a level of verification if the training is going well or not. Each time we evaluate the validation accuracy, we track if it is higher or lower than the previous best. If for a fixed number of evaluations, the accuracy is lower or equal to the previous best, we believe then that the network is not learning anything new, and so we stop training. This fixed number is called the 'validation patience' and it helps avoid situations where the validation accuracy is flat (like in the two versions above), or worse, if the network overfits (where the validation accuracy may reduce).
+
+To make this change in your notebook, look for the `patience` parameter in [this](/episode03/dermamnist_v3_lr0p005_val_patience.py) script, and include all the lines that contain it in your training function.
 
 ![training loss after change in learning rate](/episode03/dermamnist_v3_lr0p005_val_patience/train_loss.png)
 
@@ -87,3 +89,5 @@ Adding data augmentation at the end, to imclude some regularization and possibly
 * [MMAR](https://docs.nvidia.com/clara/clara-train-sdk/pt/mmar.html) is a Medical Model Archive designed by NVIDIA to organize all artifacts produced during the model development life cycle. This may be too heavyweight for research prototypes that one may begin with, but as things become more stable, such standards (much like BIDS for data storage) may help avoid further pains down the line.
 
 * Consider following the [MICCAI Hackathon reproducibility checklist](https://github.com/JunMa11/MICCAI-Reproducibility-Checklist) to ensure that your pipeline is not too exotic, and future researchers can build on your work!
+
+For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in the BENDER repository.
