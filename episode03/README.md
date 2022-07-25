@@ -98,7 +98,9 @@ The test accuracy for our model is 0.762, and as you can see, all the categories
 
 ## Fifth version:
 
-In this version, 
+In this version, to try and avoid overfitting to the training data, we increase the capacity of our model by adding more layers, with the intention of allowing the model to be more expressive and hence learn the nuances of the actual distribution of categories better (than simply memorizing the training data). 
+
+To do so, [v5](/episode03/dermamnist_v5_deeper_network.py) includes just the following change in the model `init` method:
 
     ...
     nn.Conv2d(64, 128, (3, 3), padding=1, stride=2, bias=False),
@@ -115,11 +117,21 @@ In this version,
     # (128, 8, 8)
     ...
 
+Our network now is 6 layers deep (each layer is assumed to mean convolution + ReLU + Batch Norm). Everything else is maintained to be the same, and we continue to use Tensorboard to log and compare the results.
+
+![Training and Validation losses and accuracies](/episode03/dermamnist_v5_deeper_network/training_val_v4_v5_comparison.png)
+
+In the image above, the blue curves correspond to [version 4](/episode03/dermamnist_v4_adam_TB.py), and gray curves are for the [current version](/episode03/dermamnist_v5_deeper_network.py). Note that the training as well as validation losses are lower with this deeper network, while the training accuracy has a higher slope, while the validation accuracy still tracks similar to [version 4](/episode03/dermamnist_v4_adam_TB.py). This means that we could make the model even more capable/powerful to try and understand this distribution.
+
+![Test accuracy and classification report](/episode03/dermamnist_v5_deeper_network/test_accuracy_v5.png)
+
+For this version, the test accuracy is in fact lower than the previous one, and is 0.755 (still competitive in the benchmark!). Note also that the dermatofibroma metrics are all 0, indicating that this model completely ignores this category, yet achieves good average results. This is a good reason to visualize the entire confusion chart to make sure such behavior does not occur! 
+
 --------------------
 
 ## Sixth version:
 
-Making the network even more deeper - based on improvements seen in the previous version.
+This [version](/episode03/dermamnist_v6_even_deeper_network.py) changes only the network again, and makes it even more deeper, with 8 layers now. Everything else is left the same, so that we are able to investigate the impact of each of these individual changes. The code change is again only in the `init` method of the network definition, where the following lines are included (see full changes between [v5](/episode03/dermamnist_v5_deeper_network.py) and [v6](/episode03/dermamnist_v6_even_deeper_network.py)). 
 
     ...
     nn.ReLU(),
@@ -131,6 +143,16 @@ Making the network even more deeper - based on improvements seen in the previous
     nn.Conv2d(256, 256, (3, 3), padding=1, bias=False),
     nn.BatchNorm2d(256),
     ...
+
+![Training and Validation losses and accuracies](/episode03/dermamnist_v6_even_deeper_network/training_val_comparison_v4_v5_v6.png)
+
+In the image above, the blue curves correspond to [v4](/episode03/dermamnist_v4_adam_TB.py), and pink curves are for [v5](/episode03/dermamnist_v5_deeper_network.py), and the green ones are for [the latest version](/episode03/dermamnist_v6_even_deeper_network.py). 
+
+Even though the losses for both training and validation are lower than the previous versions, the overfitting phenomenon still persists (see the validation accuracy curve). This points to the need for regularization: where we make it harder now for the network to memorize, and provide more variations of input data to learn from.
+
+![Test accuracy and classification report](/episode03/dermamnist_v6_even_deeper_network/test_accuracy_v6.png)
+
+For this version, the test accuracy is again lower than the previous one, pointing to the same issues as earlier. In the final version below, we introduce data augmentation to find out if it can resolve these problems.
 
 --------------------
 
