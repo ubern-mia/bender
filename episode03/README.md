@@ -12,7 +12,7 @@ We invite you to make a copy of the notebook, and then make changes to it (you c
 
 ![Model is not really learning all categories](/episode03/dermamnist_v1_initial/per_class_metrics.png)
 
-Note from the image above that only the `melanocytic nevi` category is being learnt by the model, and since it is has the largest representation in both the training and validation/test set, the weighted average accuracy is quite high even though all the other categories have 0 accuracy. 
+Note from the image above that only the `melanocytic nevi` category is being learnt by the model, and since it has the largest representation in both the training and validation/test set, the weighted average accuracy is quite high even though all the other categories have 0 accuracy. 
 
 ![training loss for initial version](/episode03/dermamnist_v1_initial/train_loss.png)
 
@@ -188,7 +188,7 @@ We hope you had as much fun following along this journey as we did, and that you
 
 ## References
 
-* For more general tips and tricks around model training (general because it isn't Medical Imaging in particular), [Andrei Karpathy's recipe from 2019](https://karpathy.github.io/2019/04/25/recipe/)is highly recommended. The contents of this episode is an extension of this with focus on medical image data sets. 
+* For more general tips and tricks around model training (general because it isn't Medical Imaging in particular), [Andrei Karpathy's recipe from 2019](https://karpathy.github.io/2019/04/25/recipe/) is highly recommended. The contents of this episode is an extension of this with focus on medical image data sets. 
 
 * [This](https://medium.com/miccai-educational-initiative/project-roadmap-for-the-medical-imaging-student-working-with-deep-learning-351add6066cf) blog post for more great tips while training models. This was a previous entry to the MICCAI Education Challenge as well!
 

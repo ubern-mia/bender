@@ -50,7 +50,7 @@ alt="BENDER episode 03" width="640" height="480" border="10" /></a>
 
 [Follow along this episode](/episode03/README.md) for the next step of actually building a model.
 
-We start with a naive implementation (as [ipynb](/episode03/dermamnist_v1_initial.ipynb) or a [py script](/episode03/dermamnist_v1_initial.py)), walking through the process of improving it iteratively in seven versions to get to a better state, while also understanding how to evaluate if it is indeed getting better!
+We start with a naive implementation (as [ipynb](/episode03/dermamnist_v1_initial.ipynb) or a [py script](/episode03/dermamnist_v1_initial.py)), walking through the process of improving it iteratively in seven versions to finally beat the [benchmark listed on the MedMNIST webpage](https://medmnist.com) in an organized experimental fashion!
 
 --------------------
 
