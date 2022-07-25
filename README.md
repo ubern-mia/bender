@@ -16,7 +16,9 @@ We hope through the experience of this student, you learn not to make the same m
 " target="_blank"><img src="http://img.youtube.com/vi/NtszpkE0gc4/0.jpg" 
 alt="BENDER episode 01" width="640" height="480" border="10" /></a>
 
-See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid 💣 surprises later on. A downloadable PDF version is [here](/episode01/checklist.pdf).
+See [checklist](/episode01/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid 💣 surprises later on. 
+
+A downloadable PDF version is [here](/episode01/checklist.pdf).
 
 [Exploring the Dermamnist data set](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dermamnist.ipynb) is a notebook that uses data from  [MedMNIST](https://medmnist.com/) to demonstrate examples of the kinds of details you should look for, while analyzing your clinical data.
 
@@ -34,7 +36,9 @@ For more specialized data, there are standards like [BIDS](https://bids.neuroima
 " target="_blank"><img src="http://img.youtube.com/vi/jGLBcMyiehg/0.jpg" 
 alt="BENDER episode 02" width="640" height="480" border="10" /></a>
 
-Click [here for a glossary](/episode02/glossar.md) of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo. A downloadable PDF version is [here](/episode02/glossar.pdf).
+Click [here for a glossary](/episode02/glossar.md) of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo. 
+
+A downloadable PDF version is [here](/episode02/glossar.pdf).
 
 --------------------
 
@@ -44,7 +48,9 @@ Click [here for a glossary](/episode02/glossar.md) of common terms used in the D
 " target="_blank"><img src="http://img.youtube.com/vi/f0wd8EvRiH0/0.jpg" 
 alt="BENDER episode 03" width="640" height="480" border="10" /></a>
 
-[Follow along this episode](/episode03/README.md) for the next step of actually building a model: starting with a naive implementation (as [ipynb](/episode03/dermamnist_v1_initial.ipynb) or a [py script](/episode03/dermamnist_v1_initial.py)), walking through the process of improving it iteratively in seven versions to get to a better state, while also understanding how to evaluate if it is indeed getting better!
+[Follow along this episode](/episode03/README.md) for the next step of actually building a model.
+
+We start with a naive implementation (as [ipynb](/episode03/dermamnist_v1_initial.ipynb) or a [py script](/episode03/dermamnist_v1_initial.py)), walking through the process of improving it iteratively in seven versions to get to a better state, while also understanding how to evaluate if it is indeed getting better!
 
 --------------------
 

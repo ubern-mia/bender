@@ -72,7 +72,9 @@ Validation accuracy after change of learning rate to 0.005 from 0.000005. This s
 
 ## Fourth version:
 
-For this version, we make a minor change in the optimizer: we switch from SGD (Stochastic Gradient Descent) to Adam (Adaptive Moment), which is known to be 'safer' (see [here](https://karpathy.github.io/2019/04/25/recipe/) for more) and less forgiving to hyperparameter variations. Hence, functionally, the only change here is the following line:
+For [this version (v4)](/episode03/dermamnist_v4_adam_TB.py), we make a minor change in the optimizer: we switch from SGD (Stochastic Gradient Descent) to Adam (Adaptive Moment), which is known to be 'safer' (see [here](https://karpathy.github.io/2019/04/25/recipe/) for more) and less forgiving to hyperparameter variations.
+
+Hence, functionally, the only change here is the following line:
 
     optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.9)
 
@@ -80,13 +82,23 @@ changed to
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
 
-However, we also introduce [Tensorboard](https://pytorch.org/docs/stable/tensorboard.html) to log the training progress for the same parameters: training (and additionally validation) loss as well as validation (and additionally training) accuracy. Since the code changes are relatively large compared to the previous versions, we have prepared a new [ipynb](/episode03/dermamnist_v4_adam_TB.ipynb) notebook to start off again, if you prefer.
+However, we also introduce [Tensorboard](https://pytorch.org/docs/stable/tensorboard.html) to log the training progress for the same parameters: training (and additionally validation) loss as well as validation (and additionally training) accuracy. 
+
+Since the code changes are relatively large compared to the previous versions, we have prepared a new [ipynb](/episode03/dermamnist_v4_adam_TB.ipynb) notebook to start off again, if you prefer. Run this notebook on your own to verify that you see results that confirm improvement over the previous versions, and also browse through the Tensorboard logs (like shown in the videos) to get a better handle over the performance of this model.
+
+![Training and Validation losses and accuracies](/episode03/dermamnist_v4_adam_TB/train_val_TB_plots.png)
+
+Here are the training (left) and validation (right) accuracies (top) and losses (bottom) using Tensorboard. The curves are smoothed for better visualization (smoothing = 0.898). Note how the training loss keeps reducing and accuracy keeps rising, but the validation loss plateaus and even rises, while the accuracy plateaus and also falls slightly. Our code is setup to save the model with the highest validation accuracy, but what this indicates is that our model has overfit on the training data, and the next versions attempt to handle just that. 
+
+![Test accuracy and classification report](/episode03/dermamnist_v4_adam_TB/test_accuracy_v4.png)
+
+The test accuracy for our model is 0.762, and as you can see, all the categories (and not just melanocytic nevi) have a non-zero precision, which is an improvement over the first naive version! Also, 0.762 is already second highest in the [DermaMNIST benchmarks on the MedMNIST webpage](https://medmnist.com/)!
 
 --------------------
 
 ## Fifth version:
 
-Modifying the network itself to be deeper and hopefully more capable in handling a difficult data distribution.
+In this version, 
 
     ...
     nn.Conv2d(64, 128, (3, 3), padding=1, stride=2, bias=False),
