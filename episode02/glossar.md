@@ -4,6 +4,8 @@ Deep Learning and especially as applied to Medical Imaging seems to have a lot o
 
 See [here](https://youtu.be/Gbnep6RJinQ?t=1626) for an interesting discussion around this very topic.
 
+--------------------
+
 # Table of Contents
 1. [Clinical Terms for Technical folks](#clinical_terms)
     - [Anatomical directions](#anatomical_directions)
@@ -32,6 +34,8 @@ See [here](https://youtu.be/Gbnep6RJinQ?t=1626) for an interesting discussion ar
     - [Super-resolution](#superresolution)
     - [Data Augmentation](#data_augmentation)
 3. [References](#references)
+
+--------------------
 
 ## Clinical terms for Technical Folks <a name="clinical_terms"></a>
 
@@ -84,6 +88,8 @@ hyper-intense translates to higher than normal/expected brightness/intensity, an
 ### Exogenous and Endogenous contrast
 
 ### Lesions versus tumor versus target volume
+
+--------------------
 
 ## Technical terms for Clinical Folks <a name="technical_terms"></a>
 
@@ -145,6 +151,8 @@ TODO
 
 ### Optimizer (ADAM, Gradient Descent family of, ...)
 
+--------------------
+
 ## References <a name="references"></a>
 
 See [Radiopaedia](https://radiopaedia.org/search) for a comprehensive list of clinical terms. [Radiology specific terms](https://radiopaedia.org/articles/terms-used-in-radiology) could be specifically more useful. Here are some more links for clinical terms:
@@ -160,5 +168,7 @@ Here are some references for a more exhaustive list of technical terms, some of 
 * [tasq.ai's Glossary of AI terminology](https://www.tasq.ai/glossary/)
 * [NIBIB's glossary of Medical Imaging](https://www.nibib.nih.gov/science-education/glossary)
 * [AI: a glossary of terms for AI in Medical Imaging](https://link.springer.com/content/pdf/bbm%3A978-3-319-94878-2%2F1.pdf)
+
+--------------------
 
 For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in the BENDER repository.
