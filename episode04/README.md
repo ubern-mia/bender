@@ -36,6 +36,12 @@ We recommend that metrics of evaluation are reported not just on average, but fo
 
 ## Dealing with reviewer #2 and other situations
 
+Finally, when you think you're ready to write a report/paper, there's always a [reviewer # 2](https://twitter.com/GrumpyReviewer2) lurking around. Here are some tips and tricks from the community to help navigate this labyrinth:
+
+* [Microsoft Research guide to writing a great research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/)
+* [How to write a good paper by Bill Freeman, MIT](https://faculty.cc.gatech.edu/~parikh/citizenofcvpr/static/slides/freeman_how_to_write_papers.pdf)
+* [Devi Parikh's guide to rebuttals](https://deviparikh.medium.com/how-we-write-rebuttals-dc84742fece1)
+* [How NOT to be reviewer #2 yourself](https://link.springer.com/article/10.1007/s40037-021-00670-z)
 
 --------------------
 
