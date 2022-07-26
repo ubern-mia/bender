@@ -60,7 +60,7 @@ We start with a naive implementation (as [ipynb](/episode03/dermamnist_v1_initia
 " target="_blank"><img src="http://img.youtube.com/vi/YwM7qwqSy9k/0.jpg" 
 alt="BENDER episode 04" width="640" height="480" border="10" /></a>
 
-In this final episode, the focus is on evaluation and deployment: specific points that are important to keep in mind for clinical relevance, out-of-distribution data, and other interesting bits.
+In [this final episode](/episode04/README.md), the focus is on evaluation and deployment: specific points that are important to keep in mind for clinical relevance, out-of-distribution data, and other interesting bits.
 
 --------------------
 
