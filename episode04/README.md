@@ -14,12 +14,17 @@ Portability across clinical settings is something of special importance in medic
 
 ## Multiple vendors (from an imaging hardware perspective) and varied protocols of acquisition of data
 
+Training on a data set which was acquired from the same imaging hardware or even the same hospital and acquisition protocol setting is typically called single-source bias. It may so happen that the model we build learns these nuances about the specific machine and acquisition protocol better than the actual characteristics of the category/contour/region that we want it to learn. Therefore, it is imperative to evaluate models by varying these generative parameters: choose different hardware vendors (for CT, MR, and so on); have a diverse set of acquisition protocols to make the model agnostic to these variations (sometimes this could be simulated as well!); and most importantly, ensure that the test data set is of high enough quality (not just from a label accuracy perspective, but also that of the breadth of coverage of the actual target deployment distribution): this would help more holistically evaluate the impact of such models in clinics where it would otherwise be tested on such diverse distributions of data in any case. 
+
+See [this paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104701/) for a deeper dive into some of these considerations.
 
 ## Average metrics versus robustness and reliability across distributions
 
 Data sets used for training (even if they came from a curated publicly available repository like MedMNIST) are inherently biased. What these Deep Learning models are great at doing is learning patterns: not necessarily only the ones we humans associate with the categories we want to discriminate. Simply achieving the highest average metric on the test set is not a sufficient condition for ensuring reliability and robustness across a variety of image inputs: it could simply mean that this SoTA model you've built has only incrementally learnt to perform better on this test set (sometimes called overfitting the test set, especially in a challenge/competitive modeling setting). 
 
 Hence, running some kind of a robustness test: demonstrating behavior for artificially created worst-case scenarios, indicating not just mean metrics but standard deviation across multiple training runs, and considering adversarial robustness through augmentation or another similar method would be desirable (clearly, this is quite a lot of work and may not always be possible, but it would certainly improve the levels of trust on such systems while deploying).
+
+See [this recent nature article](https://www.nature.com/articles/s41746-022-00592-y#Sec7) that discusses these effects and how to be mindful of them.
 
 ## Imbalanced testing dataset categories/pixel-labels
 
