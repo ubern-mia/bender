@@ -194,7 +194,7 @@ We hope you had as much fun following along this journey as we did, and that you
 
 * This integrated medical image visualization tool for jupyter notebooks called [itkwidgets](https://github.com/InsightSoftwareConsortium/itkwidgets) and [this getting started guide](https://www.kitware.com/monai-and-itkwidgets-getting-started/) with MONAI could be very useful!
 
-* For medical image visualization within tensorboard ("tensorboard3d"), [this plugin](https://www.kitware.com/tensorboardplugin3d-visualizing-3d-deep-learning-models-in-tensorboard/) could be super useful for volumetric data.
+* For medical image visualization within tensorboard ("tensorboard3d"), [this nice plugin developed by Kitware](https://www.kitware.com/tensorboardplugin3d-visualizing-3d-deep-learning-models-in-tensorboard/) could be super useful for volumetric data.
 
 * [This](https://medium.com/miccai-educational-initiative/project-roadmap-for-the-medical-imaging-student-working-with-deep-learning-351add6066cf) blog post for more great tips while training models. This was a previous entry to the MICCAI Education Challenge as well!
 
