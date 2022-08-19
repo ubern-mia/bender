@@ -28,6 +28,11 @@ If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM t
 
 For more specialized data, there are standards like [BIDS](https://bids.neuroimaging.io), Brain Imaging Data structure, for organizing multiple subject files for neuroimaging. Consider conforming to such formats to ensure easier read/write/convert workflows with your data set.
 
+In this context, Data-centered AI is gaining more attention, especially through these papers:
+- [DataPerf: Benchmarks for Data-Centric AI Development](https://arxiv.org/abs/2207.10062)
+- [Advances, challenges and opportunities in creating data for trustworthy AI](https://www.nature.com/articles/s42256-022-00516-1)
+- [IEEE Spectrum article: Andrew Ng, AI Minimalist: The Machine-Learning Pioneer Says Small is the New Big](https://ieeexplore.ieee.org/document/9754503)
+
 --------------------
 
 ## Episode 2: “Terminology: Meet the Experts” 
