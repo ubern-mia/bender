@@ -12,6 +12,8 @@ Portability across clinical settings is something of special importance in medic
 
 Read more about [out-of-distribution detection](https://ai.googleblog.com/2019/12/improving-out-of-distribution-detection.html) here on this Google AI blog. 
 
+See also [this recent editorial in the Radiology AI journal](https://pubs.rsna.org/doi/10.1148/ryai.220171) on bias in AI systems, and how to reduce it. 
+
 ## Multiple vendors (from an imaging hardware perspective) and varied protocols of acquisition of data
 
 Training on a data set which was acquired from the same imaging hardware or even the same hospital and acquisition protocol setting is typically called single-source bias. It may so happen that the model we build learns these nuances about the specific machine and acquisition protocol better than the actual characteristics of the category/contour/region that we want it to learn. 
