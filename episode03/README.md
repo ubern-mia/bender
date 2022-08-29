@@ -50,7 +50,7 @@ Validation accuracy after change of momentum to 0.9 from 0.5: there's not much c
 
 In the spirit of tweaking hyperparameters, we make another change here, where we increase the learning rate (one of the most sensitive, and hence most tweaked hyperparameters), so that the network weights can learn 'faster'. The functional difference between [v2](/episode03/dermamnist_v2_momentum0p9.py) and [v3](/episode03/dermamnist_v3_lr0p005_val_patience.py) is just the following line:
 
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.5)
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.000005, momentum=0.9)
 
 changed to 
 
