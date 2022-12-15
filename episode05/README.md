@@ -23,3 +23,5 @@ See [here](https://www.youtube.com/playlist?list=PLoROMvodv4rPh6wa6PGcHH6vMG9sEI
 
 ## Other resources:
 Check the thorough and awesome compilation of material from @jphall663 [awesome-interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability)
+
+### standing on the shoulders of giants, ie., google scholar ["interpretability+medical imaging"](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=interpretability+medical+imaging&btnG=)
