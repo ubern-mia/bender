@@ -1,4 +1,4 @@
-# Interpreting interpretability and it's many variations
+# Interpreting interpretability and its many variations
 
 Welcome to Episode 05, and a new year/season of BENDER. This time we focus on interpretability, and go over in a humorous manner some of the considerations around understanding "how to open the black box" of modern AI. If this is of more interest to you, please also consider joining us for [BIAS '23](http://caim.unibe.ch/bias2023), a one-day online + in-person symposium hosted at the University of Bern on the 24th of March.
 
@@ -17,3 +17,6 @@ See [here](https://www.i-aida.org/course/introinterpretableai/) for an interesti
 ## Interpretable AI video lectures by Prof. Hima Lakkaraju
 
 See [here](https://www.youtube.com/playlist?list=PLoROMvodv4rPh6wa6PGcHH6vMG9sEIPxL) for a set of videos on YouTube by Prof. Hima Lakkaraju, from a recent event at Stanford. This extends well to the first ever "Interpretable AI course" taught at [Harvard](https://interpretable-ml-class.github.io) by Prof. Lakkaraju.
+
+# Workshop on Interpretability of Machine Intelligence and Medical Image Computing - iMIMIC
+[https://imimic-workshop.com](https://imimic-workshop.com) including talks and reference to articles published in the area of XAI for medical image computing.
