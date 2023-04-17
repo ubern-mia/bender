@@ -192,6 +192,8 @@ We hope you had as much fun following along this journey as we did, and that you
 
 * If you're inclined to use MONAI, consider following [this](https://github.com/Project-MONAI/tutorials/blob/main/2d_classification/mednist_tutorial.ipynb) tutorial. It follows an older version of the medMNIST data set, and uses MONAI to load the data and build models more easily.
 
+* For a beginners' guide to image segmentation - the complete workflow using MRI and CT data, see [this paper from Dr. Leticia Rittner's group at UniCAMP](https://arxiv.org/abs/2304.05901). They have associated code on GitHub to follow along as well.
+
 * This integrated medical image visualization tool for jupyter notebooks called [itkwidgets](https://github.com/InsightSoftwareConsortium/itkwidgets) and [this getting started guide](https://www.kitware.com/monai-and-itkwidgets-getting-started/) with MONAI could be very useful!
 
 * For medical image visualization within tensorboard ("tensorboard3d"), [this nice plugin developed by Kitware](https://www.kitware.com/tensorboardplugin3d-visualizing-3d-deep-learning-models-in-tensorboard/) could be super useful for volumetric data.
