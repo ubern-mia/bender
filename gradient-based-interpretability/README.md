@@ -1,6 +1,6 @@
-# Interpreting interpretability and its many variations
+# Becoming one with the gradients
 
-Welcome to Episode 05, and a new year/season of BENDER. This time we focus on interpretability, and go over in a humorous manner some of the considerations around understanding "how to open the black box" of modern AI. If this is of more interest to you, please also consider joining us for [BIAS '23](http://caim.unibe.ch/bias2023), a one-day online + in-person symposium hosted at the University of Bern on the 24th of March.
+Welcome to Episode 05, and a new year/season of BENDER. This time we focus on gradients and interpretability, and go over in a humorous manner some of the considerations around understanding "how to open the black box" of modern AI. If this is of more interest to you, please also consider joining us for [BIAS '23](http://caim.unibe.ch/bias2023), a one-day online + in-person symposium hosted at the University of Bern on the 24th of March.
 
 In this video of the [BENDER Series](https://github.com/ubern-mia/bender), we attempt to "open the black box", and understand how gradients can be helpful and also dangerous sometimes. We introduce new characters and topics, some helpful links for which are listed below:
 
@@ -23,5 +23,3 @@ See [here](https://www.youtube.com/playlist?list=PLoROMvodv4rPh6wa6PGcHH6vMG9sEI
 
 ## Other resources:
 Check the thorough and awesome compilation of material from @jphall663 [awesome-interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability)
-
-### standing on the shoulders of giants, ie., google scholar ["interpretability+medical imaging"](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=interpretability+medical+imaging&btnG=)
