@@ -12,7 +12,7 @@ Portability across clinical settings is something of special importance in medic
 
 Read more about [out-of-distribution detection](https://ai.googleblog.com/2019/12/improving-out-of-distribution-detection.html) here on this Google AI blog. 
 
-See also [this recent editorial in the Radiology AI journal](https://pubs.rsna.org/doi/10.1148/ryai.220171) on bias in AI systems, and how to reduce it. 
+See also this recent editorial in the Radiology AI journal on bias in AI systems, and how to reduce it. 
 
 ## Multiple vendors (from an imaging hardware perspective) and varied protocols of acquisition of data
 
@@ -32,7 +32,7 @@ See [this recent nature article](https://www.nature.com/articles/s41746-022-0059
 
 ## Imbalanced testing dataset categories/pixel-labels
 
-As seen in the [many versions of models we built in episode 3](/episode03/README.md), medical image data is particularly prone to class imbalance. This problem is even worse for semantic segmentation tasks, where the number of pixels representing anomalous regions is much smaller than healthy/normal regions. There are several ways to handle this in the modeling process, however, while reporting results, equal care must be taken to indicate realistic behavior. Like in the DermaMNIST example, if one of the categories is very dominant in number, it is possible that a network that appears to perform well can simply do well in that specific category and completely avoid all the others (`dermatofibroma`, for example). 
+As seen in the [many versions of models we built in episode 3](../training-models/README.md), medical image data is particularly prone to class imbalance. This problem is even worse for semantic segmentation tasks, where the number of pixels representing anomalous regions is much smaller than healthy/normal regions. There are several ways to handle this in the modeling process, however, while reporting results, equal care must be taken to indicate realistic behavior. Like in the DermaMNIST example, if one of the categories is very dominant in number, it is possible that a ne... 
 
 We recommend that metrics of evaluation are reported not just on average, but for all the categories individually as well (ideally, the entire confusion chart or the [classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) is preferred). This would additionally help debug potential unexpected behavior in deployment, which would otherwise not have been caught while training such models. 
 
@@ -41,7 +41,7 @@ We recommend that metrics of evaluation are reported not just on average, but fo
 Finally, when you think you're ready to write a report/paper, there's always a [reviewer # 2](https://twitter.com/GrumpyReviewer2) lurking around. Here are some tips and tricks from the community to help navigate this labyrinth:
 
 * [Microsoft Research guide to writing a great research paper](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/)
-* [How to write a good paper by Bill Freeman, MIT](https://faculty.cc.gatech.edu/~parikh/citizenofcvpr/static/slides/freeman_how_to_write_papers.pdf)
+* How to write a good paper by Bill Freeman, MIT
 * [Devi Parikh's guide to rebuttals](https://deviparikh.medium.com/how-we-write-rebuttals-dc84742fece1)
 * [How NOT to be reviewer #2 yourself](https://link.springer.com/article/10.1007/s40037-021-00670-z)
 

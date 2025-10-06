@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/tcort/markdown-link-check
+    rev: v3.11.2
+    hooks:
+      - id: markdown-link-check
+        name: Check markdown links
+        description: Check for broken links in markdown files
+        entry: markdown-link-check
+        language: node
+        files: \.md$
+        args: [--config, .markdown-link-check.json]
