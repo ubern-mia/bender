@@ -1,0 +1,25 @@
+[project]
+name = "bender"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "torch",
+    "torchvision",
+    "medmnist",
+    "scikit-learn",
+    "tqdm",
+    "matplotlib",
+    "tensorboard",
+    "torchinfo",
+    "torchview",
+    "onnx",
+    "onnxscript",
+    "netron",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []

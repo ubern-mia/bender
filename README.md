@@ -20,9 +20,9 @@ See [checklist](/exploratory-data-analysis/checklist.md) for a list of keepawake
 
 A downloadable PDF version is [here](/exploratory-data-analysis/checklist.pdf).
 
-[Exploring the Dermamnist data set](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dermamnist.ipynb) is a notebook that uses data from  [MedMNIST](https://medmnist.com/) to demonstrate examples of the kinds of details you should look for, while analyzing your clinical data.
+[Exploring the Dermamnist data set](/exploratory-data-analysis/explore_dermamnist.ipynb) is a notebook that uses data from  [MedMNIST](https://medmnist.com/) to demonstrate examples of the kinds of details you should look for, while analyzing your clinical data.
 
-If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM tags](https://github.com/ubern-mia/bender/blob/main/episode01/explore_dicom.ipynb) is a notebook to demonstrate how to go about looking at the non-image metadata as well! 
+If you are lucky (or not 😉) to be working with DICOM data, [Exploring DICOM tags](/exploratory-data-analysis/explore_dicom.ipynb) is a notebook to demonstrate how to go about looking at the non-image metadata as well! 
 
 [Here](http://www.r2d3.us/) is a wonderful (non-medical-imaging) example of how simply "looking" at the data prior to modeling helps make sense of the landscape, and is a step that one must not neglect while starting off!
 
@@ -112,4 +112,3 @@ alt="BENDER episode 08" width="640" height="480" border="10" /></a>
 We hope you learn something new about how to get started with Medical Imaging and Deep Learning, and more importantly, that you have fun while learning! (If you have suggestions for improvement, please do not hesitate to create an [issue here](https://github.com/ubern-mia/bender/issues))
 
 👋 The Medical Imaging Analysis group at Universität Bern
-test
