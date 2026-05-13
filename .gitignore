@@ -2,21 +2,13 @@
 *tfevents*
 *.pt
 *.onnx
+*.onnx.data
 *.egg-info
 
 .venv/
 
 # Versioned training results (checkpoints, plots, model graphs, TensorBoard logs)
 training-models/results/
-
-# Legacy per-version artifact directories (superseded by results/vN layout)
-training-models/dermamnist_v1_initial/
-training-models/dermamnist_v2_momentum0p9/
-training-models/dermamnist_v3_lr0p005_val_patience/
-training-models/dermamnist_v4_adam_TB/
-training-models/dermamnist_v5_deeper_network/
-training-models/dermamnist_v6_even_deeper_network/
-training-models/dermamnist_v7_with_augm/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
