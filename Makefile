@@ -5,7 +5,10 @@ MODE ?= visualize
 
 FILE ?= training-models/results/v1/model.onnx
 
-.PHONY: setup install clean clean-venv netron run-v1 run-v2 run-v3 run-v4 run-v5 run-v6 run-v7
+# Extra flags for the federated-learning episode, e.g. FED_ARGS="--alpha 0.1 --strategy fedprox"
+FED_ARGS ?=
+
+.PHONY: setup install clean clean-venv netron run-v1 run-v2 run-v3 run-v4 run-v5 run-v6 run-v7 run-fed-partition run-fed run-fed-local run-fed-central
 
 setup:
 	$(UV) venv $(VENV)
@@ -44,3 +47,15 @@ run-v6:
 
 run-v7:
 	cd training-models && ../$(PYTHON) dermamnist_v7_with_augm.py $(MODE)
+
+run-fed-partition:
+	cd federated-learning && ../$(PYTHON) dermamnist_federated.py partition $(FED_ARGS)
+
+run-fed:
+	cd federated-learning && ../$(PYTHON) dermamnist_federated.py federated $(FED_ARGS)
+
+run-fed-local:
+	cd federated-learning && ../$(PYTHON) dermamnist_federated.py local $(FED_ARGS)
+
+run-fed-central:
+	cd federated-learning && ../$(PYTHON) dermamnist_federated.py centralized $(FED_ARGS)

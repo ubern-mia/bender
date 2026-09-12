@@ -15,6 +15,7 @@ dependencies = [
     "onnx",
     "onnxscript",
     "netron",
+    "flwr[simulation]",
 ]
 
 [build-system]

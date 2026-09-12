@@ -109,6 +109,18 @@ alt="BENDER episode 08" width="640" height="480" border="10" /></a>
 
 --------------------
 
+## Episode 9: “Federated Learning in Medical Imaging”
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=i2kaDRe8BDo
+" target="_blank"><img src="http://img.youtube.com/vi/i2kaDRe8BDo/0.jpg" 
+alt="BENDER episode 09" width="640" height="480" border="10" /></a>
+
+In [this episode](/federated-learning/README.md), Satish and Min collaborate across the world to train a model together — without any of their data leaving the hospital. We cover how the federated loop works, why non-IID hospital data breaks it, why “the data never leaves” does not by itself mean “private”, and which frameworks to start with.
+
+To try it yourself, [dermamnist_federated.py](/federated-learning/dermamnist_federated.py) simulates a five-hospital federation over the same data and model as episode 3 (`make run-fed`), with the local-only and pooled baselines you need to judge whether federating was worth it.
+
+--------------------
+
 We hope you learn something new about how to get started with Medical Imaging and Deep Learning, and more importantly, that you have fun while learning! (If you have suggestions for improvement, please do not hesitate to create an [issue here](https://github.com/ubern-mia/bender/issues))
 
 👋 The Medical Imaging Analysis group at Universität Bern
