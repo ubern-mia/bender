@@ -38,7 +38,7 @@ The series has run since August 2022:
 
 * :fontawesome-brands-youtube: **[The BENDER playlist](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp)** on YouTube.
 * :fontawesome-brands-youtube: **[The MIA group channel](https://www.youtube.com/@miagroup6528)** — which also hosts talks from
-  [BIAS 2023](http://caim.unibe.ch/bias2023) and teasers for the group's papers.
+  [BIAS 2023](https://amithjkamath.github.io/bias23/) and teasers for the group's papers.
 * :fontawesome-brands-github: **[ubern-mia/bender](https://github.com/ubern-mia/bender)** — this repository.
 * :material-web: **[ubern-mia.github.io/bender](https://ubern-mia.github.io/bender/)** — this site.
 
@@ -71,7 +71,7 @@ If you cite the series:
 
 ## Related work from the group
 
-* [BIAS — the Bern Interpretability AI Symposium](http://caim.unibe.ch/bias2023), whose 2023
+* [BIAS — the Bern Interpretability AI Symposium](https://amithjkamath.github.io/bias23/), whose 2023
   keynotes and tutorials are on the same YouTube channel.
 * The [Center for Artificial Intelligence in Medicine (CAIM)](http://caim.unibe.ch) at the
   University of Bern.

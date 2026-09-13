@@ -21,4 +21,14 @@ jobs:
         sudo mv lychee /usr/local/bin/
 
     - name: Check links in Markdown files
-      run: lychee --verbose --no-progress --include "https://github.com/ubern-mia/bender/blob/main/**/*.md" --exclude "https://www.youtube.com/**" --exclude-mail **/*.md
+      # Exclusions live in .lycheeignore. YouTube rate-limits CI runners, and the
+      # site's own URLs are skipped because a fresh page is published by the
+      # deploy-docs workflow running concurrently with this one.
+      run: |
+        lychee --verbose --no-progress \
+          --exclude "https://www.youtube.com/**" \
+          --exclude "https://ubern-mia.github.io/bender/**" \
+          --exclude-mail \
+          --max-retries 2 \
+          --accept 200,206,429 \
+          '**/*.md' '!site/**' '!.venv/**' 

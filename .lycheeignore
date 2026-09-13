@@ -1,0 +1,14 @@
+# Regex patterns for links lychee should not check.
+# Keep this list minimal so that a genuine breakage still turns the build red.
+
+# MkDocs directory-style URLs. The episode cards in docs/index.md link to
+# "episodes/<slug>/", which exists only once the site is built. These internal
+# links are validated properly by `mkdocs build --strict` in the deploy workflow.
+file://.*/docs/episodes/[0-9]
+
+# Hosts that answer CI runners with 403 rather than serving the page.
+# Each was verified by hand and is reachable from a browser.
+^https://medium\.com/
+^https://deviparikh\.medium\.com/
+^https://eprint\.iacr\.org/
+^https://emergency\.cdc\.gov/

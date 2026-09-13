@@ -147,7 +147,7 @@ There is no companion script for this episode, but the models from
 * **[Captum](https://captum.ai)** — the library to actually implement any of this in PyTorch.
 
 !!! info "BIAS — the Bern Interpretability AI Symposium"
-    The episode was released alongside [BIAS 2023](http://caim.unibe.ch/bias2023), a one-day
+    The episode was released alongside [BIAS 2023](https://amithjkamath.github.io/bias23/), a one-day
     symposium hosted at the University of Bern. Several talks from it are on the same
     YouTube channel, including keynotes by
     [Rich Caruana](https://www.youtube.com/watch?v=JJZk8YpjIu0),
