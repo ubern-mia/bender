@@ -1,10 +1,15 @@
 # Regex patterns for links lychee should not check.
-# Keep this list minimal so that a genuine breakage still turns the build red.
+# Keep this list minimal so a genuine breakage still turns the build red.
 
-# MkDocs directory-style URLs. The episode cards in docs/index.md link to
-# "episodes/<slug>/", which exists only once the site is built. These internal
-# links are validated properly by `mkdocs build --strict` in the deploy workflow.
-file://.*/docs/episodes/[0-9]
+# YouTube serves 404 to non-browser clients. Every video ID here is used by an
+# embed on the site and was verified through the oEmbed API.
+^https?://(www\.)?youtube\.com/
+^https?://(www\.)?youtube-nocookie\.com/
+^https?://youtu\.be/
+
+# The site's own URLs: deploy-docs runs concurrently with this workflow, so a
+# newly added page still 404s while this job is running.
+^https://ubern-mia\.github\.io/bender/
 
 # Hosts that answer CI runners with 403 rather than serving the page.
 # Each was verified by hand and is reachable from a browser.
@@ -12,3 +17,12 @@ file://.*/docs/episodes/[0-9]
 ^https://deviparikh\.medium\.com/
 ^https://eprint\.iacr\.org/
 ^https://emergency\.cdc\.gov/
+
+# Intermittently unreachable from CI runners (Cloudflare 522 / connection reset),
+# though both are live projects. Worth re-checking by hand occasionally.
+^https?://(www\.)?r2d3\.us/
+^https://(docs\.)?monai\.io/
+
+# slicer.org answers HEAD with 200 but 502s the full GET that lychee issues to
+# verify a #fragment. The page itself is live; verified by hand.
+^https://www\.slicer\.org/wiki/

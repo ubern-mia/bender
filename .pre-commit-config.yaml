@@ -8,4 +8,7 @@ repos:
         entry: markdown-link-check
         language: node
         files: \.md$
+        # docs/ pages use MkDocs-relative links that only resolve in the built
+        # site; `make docs-build` (mkdocs --strict) validates those instead.
+        exclude: ^(docs/|site/)
         args: [--config, .markdown-link-check.json]

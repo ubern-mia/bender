@@ -53,6 +53,27 @@ We use [pre-commit](https://pre-commit.com/) to run automated checks on your cod
 
 In addition to local pre-commit checks, we have GitHub Actions that run the same checks in CI:
 
-- **Link Check Workflow**: Runs on pushes and pull requests to check for broken links
+- **Link Check Workflow**: Runs on pushes and pull requests to check for broken links, in two
+  passes — repository markdown (with on-disk file links) and `docs/` (web links only, since
+  those pages use MkDocs-relative links). Shared exclusions live in `.lycheeignore`.
+- **Deploy docs Workflow**: Builds the site with `mkdocs build --strict` and publishes it to
+  <https://ubern-mia.github.io/bender/>. The strict build is what validates internal links
+  and image paths under `docs/`.
+
+## Documentation site
+
+The website lives in `docs/`, configured by `mkdocs.yml`:
+
+```bash
+make docs-install   # add mkdocs-material to .venv
+make docs-serve     # live preview at http://127.0.0.1:8000
+make docs-build     # render into site/ (same strict build CI runs)
+```
+
+Episode figures are not copied into `docs/`. They stay next to the code that produced them,
+and `hooks/repo_assets.py` publishes them under `/figures/` at build time. The checklist and
+glossary pages include the repository markdown via `pymdownx.snippets` section markers
+(`<!-- --8<-- [start:body] -->`), so those files remain the single source of truth — do not
+remove those marker comments.
 
 Make sure your local checks pass before opening a pull request, as the CI will also run these checks.

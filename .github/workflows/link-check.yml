@@ -14,21 +14,38 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Install lychee
-      run: |
-        wget https://github.com/lycheeverse/lychee/releases/download/v0.15.0/lychee-v0.15.0-x86_64-unknown-linux-gnu.tar.gz
-        tar -xzf lychee-v0.15.0-x86_64-unknown-linux-gnu.tar.gz
-        sudo mv lychee /usr/local/bin/
+    # Two passes, because the two kinds of markdown in this repository resolve
+    # their relative links differently.
+    #
+    # 1. Repository markdown (READMEs, checklist, glossary) is read on GitHub, so
+    #    relative and root-relative file links must resolve on disk.
+    # 2. Pages under docs/ are read on the built site, so their relative links
+    #    resolve to MkDocs URLs ("episodes/<slug>/") that do not exist as files.
+    #    Those are validated by `mkdocs build --strict` in the deploy-docs
+    #    workflow instead, so here only the web links are checked.
+    #
+    # Shared exclusions live in .lycheeignore.
 
-    - name: Check links in Markdown files
-      # Exclusions live in .lycheeignore. YouTube rate-limits CI runners, and the
-      # site's own URLs are skipped because a fresh page is published by the
-      # deploy-docs workflow running concurrently with this one.
-      run: |
-        lychee --verbose --no-progress \
-          --exclude "https://www.youtube.com/**" \
-          --exclude "https://ubern-mia.github.io/bender/**" \
-          --exclude-mail \
-          --max-retries 2 \
-          --accept 200,206,429 \
-          '**/*.md' '!site/**' '!.venv/**' 
+    - name: Check links in repository markdown
+      uses: lycheeverse/lychee-action@v2
+      with:
+        args: >-
+          --no-progress
+          --root-dir "$GITHUB_WORKSPACE"
+          --exclude-path docs
+          --exclude-path site
+          --max-retries 3
+          --retry-wait-time 5
+          '**/*.md'
+        fail: true
+
+    - name: Check web links in docs/
+      uses: lycheeverse/lychee-action@v2
+      with:
+        args: >-
+          --no-progress
+          --exclude '^file://'
+          --max-retries 3
+          --retry-wait-time 5
+          'docs/**/*.md'
+        fail: true
