@@ -1,10 +1,16 @@
 # Glossary
 
+> 📖 **This page has a fuller companion on the website:** [Episode 2 — Meet the Experts](https://ubern-mia.github.io/bender/episodes/02-terminology/) — with the video, an introduction to the topic, and a grouped reading list.
+
+<!-- --8<-- [start:intro] -->
+
 Deep Learning and especially as applied to Medical Imaging seems to have a lot of jargon - which is difficult to track and remember at all times. This page, part of the [BENDER Series](https://github.com/ubern-mia/bender), is meant to include a single line (or only slightly longer) description of some of these commonly used terms, so that reading papers and talking to research collaborators is easier than otherwise.
 
 See [here](https://youtu.be/Gbnep6RJinQ?t=1626) for an interesting discussion around this very topic.
 
 --------------------
+
+<!-- --8<-- [end:intro] -->
 
 # Table of Contents
 1. Clinical Terms for Technical folks
@@ -36,6 +42,8 @@ See [here](https://youtu.be/Gbnep6RJinQ?t=1626) for an interesting discussion ar
 3. References
 
 --------------------
+
+<!-- --8<-- [start:body] -->
 
 ## Clinical terms for Technical Folks {#clinical_terms}
 
@@ -172,3 +180,4 @@ Here are some references for a more exhaustive list of technical terms, some of 
 --------------------
 
 For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in the BENDER repository.
+<!-- --8<-- [end:body] -->

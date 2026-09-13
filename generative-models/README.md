@@ -1,5 +1,7 @@
 # Generative Models in Medical Imaging
 
+> 📖 **This page has a fuller companion on the website:** [Episode 7 — Generative Models in Medical Imaging](https://ubern-mia.github.io/bender/episodes/07-generative-models/) — with the video, an introduction to the topic, and a grouped reading list.
+
 Welcome to Episode 07 of the [BENDER Series](https://github.com/ubern-mia/bender). Having spent episodes 1 through 6 learning to *discriminate* — is this lesion malignant, which pixels are tumour — we now turn the problem around and ask a model to *generate*: to produce images that could plausibly have come from the scanner, but never did.
 
 Inspired by the iconic Matrix movie, which blends deep philosophical questions with AI technology (a highly recommended watch), we've tried to capture some of that spirit in this episode. We go through the basic concepts of generative models and then dive into Variational Auto-Encoders, Generative Adversarial Networks, Conditional GANs, their pros and cons, their use in medical imaging applications, and the basics of Diffusion Models.

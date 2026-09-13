@@ -1,5 +1,7 @@
 # Training models: tips and tricks
 
+> 📖 **This page has a fuller companion on the website:** [Episode 3 — Good Model Training Shall You Strive For](https://ubern-mia.github.io/bender/episodes/03-training-models/) — with the video, an introduction to the topic, and a grouped reading list.
+
 At this stage, you hopefully have the data organized and curated in a way that it is ready to be used to train a deep learning model. In this episode of the [BENDER Series](https://github.com/ubern-mia/bender), we go over some tips and tricks to make the process of training, and more importantly logging metrics and intermediate results in a manageable manner.
 
 --------------------

@@ -1,5 +1,9 @@
 # Checklist: The Data Pile
 
+> 📖 **This page has a fuller companion on the website:** [Episode 1 — The Data Pile](https://ubern-mia.github.io/bender/episodes/01-exploratory-data-analysis/) — with the video, an introduction to the topic, and a grouped reading list.
+
+<!-- --8<-- [start:body] -->
+
 --------------------
 
 This is a one-page checklist, part of the [BENDER Series](https://github.com/ubern-mia/bender), with questions-to-ask-yourself *after* you have access to clinical imaging data, but, *before* you start to use it to build models.  
@@ -21,3 +25,4 @@ This is a one-page checklist, part of the [BENDER Series](https://github.com/ube
 --------------------
 
 For questions/suggestions for improvements, please [create an issue](https://github.com/ubern-mia/bender/issues) in the BENDER repository.
+<!-- --8<-- [end:body] -->

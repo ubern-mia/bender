@@ -1,5 +1,7 @@
 # Federated Learning: training together, while staying apart
 
+> 📖 **This page has a fuller companion on the website:** [Episode 9 — Federated Learning in Medical Imaging](https://ubern-mia.github.io/bender/episodes/09-federated-learning/) — with the video, an introduction to the topic, and a grouped reading list.
+
 Welcome to Episode 09 of the [BENDER Series](https://github.com/ubern-mia/bender). In this episode, Satish and Min want to build their next model together — except their data sits in two hospitals, on two continents, under two very different sets of rules. Nobody is allowed to ship the images anywhere. So instead of moving the data to the model, they move the model to the data: this is Federated Learning.
 
 By now you have curated data ([episode 1](../exploratory-data-analysis/checklist.md)), trained a model in an organized way ([episode 3](../training-models/README.md)), and thought hard about how it will behave in the clinic ([episode 4](../evaluating-and-deploying-model/README.md)). Federated learning does not replace any of that: it makes every one of those steps harder, and this episode is about the parts that surprise people.

@@ -1,0 +1,127 @@
+site_name: BENDER
+site_description: >-
+  BEst practices in medical imagiNg DEep leaRning — a video series and hands-on
+  companion for students starting out with deep learning on medical images.
+site_url: https://ubern-mia.github.io/bender/
+site_author: Medical Image Analysis group, University of Bern
+
+repo_url: https://github.com/ubern-mia/bender
+repo_name: ubern-mia/bender
+edit_uri: edit/main/docs/
+
+copyright: >-
+  Made by the <a href="https://www.artorg.unibe.ch/research/mia/">Medical Image Analysis group</a>
+  at the University of Bern &middot; content under the
+  <a href="https://github.com/ubern-mia/bender/blob/main/LICENSE">MIT licence</a>
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/robot-happy-outline
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Follow system theme
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+
+hooks:
+  - hooks/repo_assets.py
+
+plugins:
+  - search
+  - glightbox:
+      auto_caption: true
+      skip_classes:
+        - no-lightbox
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.snippets:
+      base_path:
+        - .
+      check_paths: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp
+      name: The BENDER playlist on YouTube
+    - icon: fontawesome/brands/github
+      link: https://github.com/ubern-mia/bender
+      name: BENDER on GitHub
+    - icon: material/school
+      link: https://www.artorg.unibe.ch/research/mia/
+      name: The MIA group at the University of Bern
+  generator: false
+
+nav:
+  - Home: index.md
+  - Start here: getting-started.md
+  - Episodes:
+      - episodes/index.md
+      - 1 · The Data Pile: episodes/01-exploratory-data-analysis.md
+      - 2 · Meet the Experts: episodes/02-terminology.md
+      - 3 · Good Model Training: episodes/03-training-models.md
+      - 4 · Born to Deploy: episodes/04-evaluation-and-deployment.md
+      - 5 · One with the Gradients: episodes/05-interpretability.md
+      - 6 · The U-Net Model: episodes/06-u-net.md
+      - 7 · Generative Models: episodes/07-generative-models.md
+      - 8 · Foundation Models: episodes/08-foundation-models.md
+      - 9 · Federated Learning: episodes/09-federated-learning.md
+  - Resources:
+      - Data checklist: resources/checklist.md
+      - Glossary: resources/glossary.md
+      - Reading list: resources/reading-list.md
+      - About the series: resources/about.md

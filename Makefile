@@ -8,7 +8,7 @@ FILE ?= training-models/results/v1/model.onnx
 # Extra flags for the federated-learning episode, e.g. FED_ARGS="--alpha 0.1 --strategy fedprox"
 FED_ARGS ?=
 
-.PHONY: setup install clean clean-venv netron run-v1 run-v2 run-v3 run-v4 run-v5 run-v6 run-v7 run-fed-partition run-fed run-fed-local run-fed-central
+.PHONY: setup install clean clean-venv netron run-v1 run-v2 run-v3 run-v4 run-v5 run-v6 run-v7 run-fed-partition run-fed run-fed-local run-fed-central docs-install docs-serve docs-build
 
 setup:
 	$(UV) venv $(VENV)
@@ -59,3 +59,14 @@ run-fed-local:
 
 run-fed-central:
 	cd federated-learning && ../$(PYTHON) dermamnist_federated.py centralized $(FED_ARGS)
+
+# --- Documentation site (https://ubern-mia.github.io/bender) ---------------
+
+docs-install: setup
+	$(UV) pip install --python $(PYTHON) mkdocs-material mkdocs-glightbox
+
+docs-serve:
+	$(VENV)/bin/mkdocs serve
+
+docs-build:
+	$(VENV)/bin/mkdocs build --strict

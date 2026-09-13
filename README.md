@@ -2,6 +2,8 @@
 
 Are you a new(ish) Graduate or a super-enthusiastic Undergraduate student working with Medical Image data, and pondering over how to get that Deep Learning model to train with it? If so, this repository is for you: 
 
+📖 **Full notes, episode-by-episode, are on the companion website: [ubern-mia.github.io/bender](https://ubern-mia.github.io/bender/)**
+
 It supports the [BENDER (BEst practices in medical imagiNg DEep leaRning) series of videos](https://www.youtube.com/playlist?list=PLFwdflE4leRpqIz-F68pvwFATIOEwrSHp), which is submitted to [the MICCAI Education Challenge, 2022](https://miccai-sb.github.io/challenge.html).
 
 We invite you to watch along the following episodes (click on the pictures below to watch on YouTube) that track the life and times of a new student who has just started working with this kind of data: through the ups and downs of the journey to build a State-of-The-Art model. 
@@ -15,6 +17,8 @@ We hope through the experience of this student, you learn not to make the same m
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=NtszpkE0gc4
 " target="_blank"><img src="http://img.youtube.com/vi/NtszpkE0gc4/0.jpg" 
 alt="BENDER episode 01" width="640" height="480" border="10" /></a>
+
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/01-exploratory-data-analysis/)
 
 See [checklist](/exploratory-data-analysis/checklist.md) for a list of keepawakes while dealing with clinical data. We believe checking off all of these as a bare minimum would help avoid 💣 surprises later on. 
 
@@ -41,6 +45,8 @@ In this context, Data-centered AI is gaining more attention, especially through 
 " target="_blank"><img src="http://img.youtube.com/vi/jGLBcMyiehg/0.jpg" 
 alt="BENDER episode 02" width="640" height="480" border="10" /></a>
 
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/02-terminology/)
+
 Click [here for a glossary](/terminology-meet-experts/glossar.md) of common terms used in the Deep Learning world, with a special focus on Medical Imaging and clinical lingo. 
 
 A downloadable PDF version is [here](/terminology-meet-experts/glossar.pdf).
@@ -52,6 +58,8 @@ A downloadable PDF version is [here](/terminology-meet-experts/glossar.pdf).
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=f0wd8EvRiH0
 " target="_blank"><img src="http://img.youtube.com/vi/f0wd8EvRiH0/0.jpg" 
 alt="BENDER episode 03" width="640" height="480" border="10" /></a>
+
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/03-training-models/)
 
 [Follow along this episode](/training-models/README.md) for the next step of actually building a model.
 
@@ -65,6 +73,8 @@ We start with a naive implementation (as [ipynb](/training-models/dermamnist_v1_
 " target="_blank"><img src="http://img.youtube.com/vi/YwM7qwqSy9k/0.jpg" 
 alt="BENDER episode 04" width="640" height="480" border="10" /></a>
 
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/04-evaluation-and-deployment/)
+
 In [this episode](/evaluating-and-deploying-model/README.md), the focus is on evaluation and deployment: specific points that are important to keep in mind for clinical relevance, out-of-distribution data, and other interesting bits.
 
 --------------------
@@ -74,6 +84,8 @@ In [this episode](/evaluating-and-deploying-model/README.md), the focus is on ev
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=hr1szGBP7Ps
 " target="_blank"><img src="http://img.youtube.com/vi/hr1szGBP7Ps/0.jpg" 
 alt="BENDER episode 05" width="640" height="480" border="10" /></a>
+
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/05-interpretability/)
 
 [Follow along this episode](/gradient-based-interpretability/README.md) for the next step in understanding gradients and their role in deep learning interpretability.
 
@@ -85,6 +97,8 @@ alt="BENDER episode 05" width="640" height="480" border="10" /></a>
 " target="_blank"><img src="http://img.youtube.com/vi/AuDio_Clxo8/0.jpg" 
 alt="BENDER episode 06" width="640" height="480" border="10" /></a>
 
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/06-u-net/)
+
 [Follow along this episode](/u-net-model/README.md) for an introduction to the U-Net model, a popular architecture in medical image segmentation.
 
 --------------------
@@ -94,6 +108,8 @@ alt="BENDER episode 06" width="640" height="480" border="10" /></a>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp3OUSdtkfY
 " target="_blank"><img src="http://img.youtube.com/vi/Bp3OUSdtkfY/0.jpg" 
 alt="BENDER episode 07" width="640" height="480" border="10" /></a>
+
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/07-generative-models/)
 
 [Follow along this episode](/generative-models/README.md) for insights into generative models and their applications in medical imaging.
 
@@ -105,6 +121,8 @@ alt="BENDER episode 07" width="640" height="480" border="10" /></a>
 " target="_blank"><img src="http://img.youtube.com/vi/JVfEAjbw5hk/0.jpg" 
 alt="BENDER episode 08" width="640" height="480" border="10" /></a>
 
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/08-foundation-models/)
+
 [Follow along this episode](/foundation-models/README.md) for a discussion on foundation models and their potential in medical imaging.
 
 --------------------
@@ -114,6 +132,8 @@ alt="BENDER episode 08" width="640" height="480" border="10" /></a>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=i2kaDRe8BDo
 " target="_blank"><img src="http://img.youtube.com/vi/i2kaDRe8BDo/0.jpg" 
 alt="BENDER episode 09" width="640" height="480" border="10" /></a>
+
+📖 [Read the full notes for this episode](https://ubern-mia.github.io/bender/episodes/09-federated-learning/)
 
 In [this episode](/federated-learning/README.md), Satish and Min collaborate across the world to train a model together — without any of their data leaving the hospital. We cover how the federated loop works, why non-IID hospital data breaks it, why “the data never leaves” does not by itself mean “private”, and which frameworks to start with.
 

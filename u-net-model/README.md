@@ -1,5 +1,7 @@
 # The U-Net Model
 
+> 📖 **This page has a fuller companion on the website:** [Episode 6 — The U-Net Model](https://ubern-mia.github.io/bender/episodes/06-u-net/) — with the video, an introduction to the topic, and a grouped reading list.
+
 Welcome to Episode 06 of BENDER. In this episode, we dive into the U-Net model, a cornerstone architecture in medical image segmentation. U-Net is widely used for its effectiveness in tasks like organ segmentation, tumor detection, and other pixel-level predictions in medical imaging.
 
 The U-Net architecture, introduced by Olaf Ronneberger et al. in 2015, features a symmetric encoder-decoder structure with skip connections that help preserve spatial information during upsampling. This makes it particularly powerful for biomedical image analysis where precise localization is crucial.

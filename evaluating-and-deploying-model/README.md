@@ -1,5 +1,7 @@
 # Evaluation and Deployment: final points to consider
 
+> 📖 **This page has a fuller companion on the website:** [Episode 4 — Born to Deploy](https://ubern-mia.github.io/bender/episodes/04-evaluation-and-deployment/) — with the video, an introduction to the topic, and a grouped reading list.
+
 At this stage, you have curated the data set, built in an organized fashion: a model that surpasses previously published benchmarks, and are now ready to show it to your clinical collaborators and even write a report/paper for review. 
 
 In this episode of the [BENDER Series](https://github.com/ubern-mia/bender), we go over some final checks to make this translation of research-grade models to something that could be tested in clinics better.

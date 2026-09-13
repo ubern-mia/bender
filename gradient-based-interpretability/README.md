@@ -1,5 +1,7 @@
 # Becoming one with the gradients
 
+> 📖 **This page has a fuller companion on the website:** [Episode 5 — Becoming One with the Gradients](https://ubern-mia.github.io/bender/episodes/05-interpretability/) — with the video, an introduction to the topic, and a grouped reading list.
+
 Welcome to Episode 05, and a new year/season of BENDER. This time we focus on gradients and interpretability, and go over in a humorous manner some of the considerations around understanding "how to open the black box" of modern AI. If this is of more interest to you, please also consider joining us for [BIAS '23](http://caim.unibe.ch/bias2023), a one-day online + in-person symposium hosted at the University of Bern on the 24th of March.
 
 In this video of the [BENDER Series](https://github.com/ubern-mia/bender), we attempt to "open the black box", and understand how gradients can be helpful and also dangerous sometimes. We introduce new characters and topics, some helpful links for which are listed below:

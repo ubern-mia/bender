@@ -14,3 +14,6 @@ training-models/results/
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Rendered documentation site (built by .github/workflows/deploy-docs.yml)
+site/
