@@ -36,6 +36,7 @@ jobs:
           --exclude-path site
           --max-retries 3
           --retry-wait-time 5
+          --timeout 45
           '**/*.md'
         fail: true
 
@@ -47,5 +48,6 @@ jobs:
           --exclude '^file://'
           --max-retries 3
           --retry-wait-time 5
+          --timeout 45
           'docs/**/*.md'
         fail: true
